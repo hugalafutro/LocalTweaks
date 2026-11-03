@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Hauler's Dream batches a workbench bill as its own job, HaulersDream_BatchCraft. Its driver
+	     (HaulersDream.JobDriver_BatchCraft) subclasses JobDriver_DoBill, keeps the bench as target A and
+	     works each rep with the vanilla Toils_Recipe.DoRecipeWork, but the animation mods match jobs by
+	     defName, so a batch-crafting pawn stood still. Every Flourish Everyday JobAnimationDef and every
+	     Show Me Your Tools JobToolDef that lists DoBill also gets HaulersDream_BatchCraft, so batch
+	     crafting picks the same animations and tools (bench conditions included) as a normal bill. -->
+	<Operation Class="PatchOperationFindMod">
+		<mods><li>Hauler's Dream</li></mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/Flourish.Everyday.JobAnimationDef/jobs[li="DoBill" and not(li="HaulersDream_BatchCraft")]</xpath>
+					<value><li>HaulersDream_BatchCraft</li></value>
+					<success>Always</success>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/JobEffects.JobToolDef/jobDefs[li="DoBill" and not(li="HaulersDream_BatchCraft")]</xpath>
+					<value><li>HaulersDream_BatchCraft</li></value>
+					<success>Always</success>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

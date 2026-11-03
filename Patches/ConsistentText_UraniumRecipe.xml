@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Consistent Text (ferny.consistenttext) "Mods and Shit/Alpha Animals" patch replaces AA_ExtractUranium's <label>
+	     with a <description> node, so the refinery bill loses its name and the def has two descriptions.
+	     Restore one label + one description while the label is missing; retires itself once Consistent Text is fixed.
+	     Must load after ferny.consistenttext. -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/RecipeDef[defName="AA_ExtractUranium"]/label</xpath>
+		<nomatch Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/RecipeDef[defName="AA_ExtractUranium"]/description</xpath>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/RecipeDef[defName="AA_ExtractUranium"]</xpath>
+					<value>
+						<label>extract uranium from unrefined uranium crystals</label>
+						<description>Extract uranium from unrefined uranium crystals.</description>
+					</value>
+				</li>
+			</operations>
+		</nomatch>
+	</Operation>
+</Patch>

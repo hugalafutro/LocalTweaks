@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Decorative tube pieces only. destroyable must be true too: deconstructing ends in Destroy(), which refuses non-destroyable things.
+	     They keep useHitPoints=false, so they still can't be damaged. alwaysDeconstructible skips the claim check (the ancient base sets claimable=false). -->
+	<Operation Class="PatchOperationReplace" MayRequire="vanillaquestsexpanded.ancients">
+		<xpath>Defs/ThingDef[defName="VQEA_PneumaticTubes" or defName="VQEA_PneumaticTubes_Long" or defName="VQEA_PneumaticTubes_Triple" or defName="VQEA_PneumaticTubes_Corner" or defName="VQEA_PneumaticTubes_Underground" or defName="VQEA_PneumaticTubes_Wall"]/destroyable</xpath>
+		<value>
+			<destroyable>true</destroyable>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="vanillaquestsexpanded.ancients">
+		<xpath>Defs/ThingDef[defName="VQEA_PneumaticTubes" or defName="VQEA_PneumaticTubes_Long" or defName="VQEA_PneumaticTubes_Triple" or defName="VQEA_PneumaticTubes_Corner" or defName="VQEA_PneumaticTubes_Underground" or defName="VQEA_PneumaticTubes_Wall"]/building/deconstructible</xpath>
+		<value>
+			<deconstructible>true</deconstructible>
+			<alwaysDeconstructible>true</alwaysDeconstructible>
+		</value>
+	</Operation>
+</Patch>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Flourish - Everyday Animations (astryl.FlourishEveryday) poses a pawn using the vanilla Telescope
+	     with Flourish_Watch_Telescope: JobAnimationWorker_Anchored draws the pawn at the telescope's
+	     TrueCenter + anchor, facing anchorFacing. The shipped values (anchor (0.55, -0.35), facing West)
+	     put the pawn on the wrong side of the eyepiece, so the pose looks mirrored. Mirror it: anchor x
+	     negated, facing East. The body.rot / hm.* tracks are facing-relative (ApplyFacing), so they mirror
+	     with it. Only fires while the def still has the original values; must load after
+	     astryl.flourisheveryday. -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/Flourish.Everyday.JobAnimationDef[defName="Flourish_Watch_Telescope" and anchor="(0.55, -0.35)" and anchorFacing="West"]</xpath>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Flourish.Everyday.JobAnimationDef[defName="Flourish_Watch_Telescope"]/anchor</xpath>
+					<value><anchor>(-0.55, -0.35)</anchor></value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Flourish.Everyday.JobAnimationDef[defName="Flourish_Watch_Telescope"]/anchorFacing</xpath>
+					<value><anchorFacing>East</anchorFacing></value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>

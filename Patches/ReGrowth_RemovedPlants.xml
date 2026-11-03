@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- ReGrowth 2 (ReGrowth.BOTR.Core) commented out RG_Plant_JoshuaTree and RG_Plant_WingCactus in its 1.6 defs,
+	     but Cyanobot's Plant Gen Patches still adds them to the Biomes! Oasis BMT_ChromaticOasis wildPlants
+	     ("Could not resolve cross-reference ... BiomePlantRecord"). Strip them from every biome while the ThingDefs
+	     are absent; the patch retires itself if ReGrowth brings the plants back. Must load after cyanobot.plantgenpatch. -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="RG_Plant_JoshuaTree"]</xpath>
+		<nomatch Class="PatchOperationRemove">
+			<xpath>Defs/BiomeDef/wildPlants/RG_Plant_JoshuaTree</xpath>
+			<success>Always</success>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="RG_Plant_WingCactus"]</xpath>
+		<nomatch Class="PatchOperationRemove">
+			<xpath>Defs/BiomeDef/wildPlants/RG_Plant_WingCactus</xpath>
+			<success>Always</success>
+		</nomatch>
+	</Operation>
+</Patch>

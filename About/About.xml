@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Local Tweaks (sammael)</name>
+  <author>sammael</author>
+  <packageId>sammael.localtweaks</packageId>
+  <supportedVersions>
+    <li>1.7</li>
+  </supportedVersions>
+  <loadAfter>
+    <li>vanillaquestsexpanded.ancients</li>
+    <li>cyanobot.plantgenpatch</li>
+    <li>ferny.consistenttext</li>
+    <li>astryl.flourisheveryday</li>
+  </loadAfter>
+  <description>Personal XML tweaks.
+- Vanilla Quests Expanded - Ancients: decorative pneumatic tubes in vaults can be deconstructed. The launch port and termini are left alone (they have code behind them).
+- Cyanobot's Plant Gen Patches + Biomes! Oasis: drops RG_Plant_JoshuaTree / RG_Plant_WingCactus from biome wildPlants while ReGrowth 2 keeps those defs commented out.
+- Consistent Text: restores the Alpha Animals refinery recipe label (AA_ExtractUranium) that its patch deletes.
+- Flourish - Everyday Animations: removes the hand tracks and the body-lowering root.z track from the children's Floordrawing animation (Flourish_Kid_FloorDraw) so Show Me Your Tools' crayon and hands are the only hands drawn and line up with the body.
+- Flourish - Everyday Animations: mirrors the telescope pose (Flourish_Watch_Telescope) so the pawn stands on the eyepiece side, facing East.
+- Show Me Your Tools: no handheld spyglass while using a telescope (UseTelescope removed from JE_Tool_Spyglass); it stays for skygazing.
+- Hauler's Dream: batch crafting (HaulersDream_BatchCraft) uses the same Flourish Everyday animations and Show Me Your Tools tools as a normal bill (DoBill).</description>
+</ModMetaData>

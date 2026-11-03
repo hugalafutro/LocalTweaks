@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Flourish - Everyday Animations (astryl.FlourishEveryday) animates children's Floordrawing with
+	     Flourish_Kid_FloorDraw. Two of its tracks fight Show Me Your Tools (meathax.ShowMeYourTools),
+	     which draws a crayon plus its own hand and forearm for the same job:
+	     - hand tracks (hm.*, ho.*) make Flourish's hands layer draw a second pair of hands;
+	     - root.z lowers the body about a third of a cell for the kneel, while Show Me Your Tools keeps
+	       drawing the crayon from the pawn's cell centre, so the crayon floats at shoulder height.
+	     Strip both: Flourish keeps the tilt, squash and sit-back-to-look beats, Show Me Your Tools owns
+	     the hands and the crayon lines up with the body. Must load after astryl.flourisheveryday. -->
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/Flourish.Everyday.JobAnimationDef[defName="Flourish_Kid_FloorDraw"]/tracks/*[starts-with(name(), "hm.") or starts-with(name(), "ho.") or name()="root.z"]</xpath>
+		<success>Always</success>
+	</Operation>
+</Patch>

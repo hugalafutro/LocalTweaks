@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Alpha Genes' AG_WretchBlacklistDef lists GeneDefs that random mutations (AG_UnstableMutation*) must not roll.
+	     HediffComp_RandomMutation copies that list into each hediff and saves it as Def references. Cherry Picker
+	     removes GeneDef/AG_DecreasedCommandRange from the DefDatabase only after defs resolve, so the blacklist keeps
+	     the live object, every new mutation hediff saves it, and every load logs
+	     "Could not load reference to Verse.GeneDef named AG_DecreasedCommandRange". Strip it at XML time instead. -->
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/AlphaGenes.WretchBlacklistDef/blackListedGenes/li[text()="AG_DecreasedCommandRange"]</xpath>
+		<success>Always</success>
+	</Operation>
+</Patch>

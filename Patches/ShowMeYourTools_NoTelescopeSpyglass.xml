@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Show Me Your Tools (meathax.ShowMeYourTools) draws a handheld spyglass (JE_Tool_Spyglass) for
+	     UseTelescope and Skygaze. With Flourish Everyday the telescope user is drawn at an anchored offset
+	     beside the telescope building, while the spyglass stays at the pawn's real cell, so it floats
+	     off to the side. The pawn already looks through a real telescope there, so drop UseTelescope;
+	     the spyglass stays for Skygaze. -->
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/JobEffects.JobToolDef[defName="JE_Tool_Spyglass"]/jobDefs/li[text()="UseTelescope"]</xpath>
+		<success>Always</success>
+	</Operation>
+</Patch>
