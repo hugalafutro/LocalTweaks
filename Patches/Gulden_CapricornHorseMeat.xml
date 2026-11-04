@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Gulden's capricorn generated its own meat also labeled "horse meat", so it showed twice in filters.
+	     With useMeatFrom the game skips generating Meat_Gulden_Animal_Capricorn and butchering yields Meat_Horse.
+	     Saves that still hold the old meat need Meat_Gulden_Animal_Capricorn renamed to Meat_Horse. -->
+	<Operation Class="PatchOperationAdd" MayRequire="pphhyy.guldennew">
+		<xpath>Defs/ThingDef[defName="Gulden_Animal_Capricorn"]/race</xpath>
+		<value>
+			<useMeatFrom>Horse</useMeatFrom>
+		</value>
+	</Operation>
+</Patch>

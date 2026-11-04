@@ -12,6 +12,7 @@
     <li>ferny.consistenttext</li>
     <li>sarg.alphabiomes</li>
     <li>vanillaexpanded.vexploratione</li>
+    <li>pphhyy.guldennew</li>
     <li>astryl.flourisheveryday</li>
   </loadAfter>
   <url>https://github.com/hugalafutro/LocalTweaks</url>
@@ -24,5 +25,6 @@
 - Flourish - Everyday Animations: telescope pose mirrored so the pawn stands on the eyepiece side, facing East.
 - Show Me Your Tools: no floating handheld spyglass while using a telescope (kept for skygazing).
 - Hauler's Dream: batch crafting gets the same Flourish animations and Show Me Your Tools tools as a normal bill.
-- Alpha Biomes + Vanilla Landmarks Expanded: chocolate and jadeite rock can be designated with "Mine vein".</description>
+- Alpha Biomes + Vanilla Landmarks Expanded: chocolate and jadeite rock can be designated with "Mine vein".
+- Gulden Biome (Continued): capricorns butcher into vanilla horse meat, so "horse meat" no longer shows twice.</description>
 </ModMetaData>
