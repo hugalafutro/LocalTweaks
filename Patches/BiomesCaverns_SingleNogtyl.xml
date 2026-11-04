@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Biomes! Caverns ships two trees labeled "nogtyl": BMT_Nogtyl (wild in fungal forest caves) and BMT_NogtylMarsh
+	     (wild on marshy soil, own sowing settings, VCE aquatic sow tag). BMT_Nogtyl inherits TreeBase's Ground sow tag
+	     and sets mustBeWildToSow false, so both show in the plant menu. Keep only the marsh one sowable; the cave one
+	     still grows wild and existing ones are untouched. -->
+	<Operation Class="PatchOperationAdd" MayRequire="BiomesTeam.BiomesCaverns">
+		<xpath>Defs/ThingDef[defName="BMT_Nogtyl"]/plant</xpath>
+		<value>
+			<sowTags Inherit="False" />
+		</value>
+	</Operation>
+</Patch>
