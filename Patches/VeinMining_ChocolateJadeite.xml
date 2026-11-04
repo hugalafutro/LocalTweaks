@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Both mods set veinMineable=false, so the vanilla "Mine vein" gizmo never shows for them.
+	     The smoothed variants inherit from these defs and pick up the change too. -->
+	<Operation Class="PatchOperationReplace" MayRequire="sarg.alphabiomes,ludeon.rimworld.odyssey">
+		<xpath>Defs/ThingDef[defName="AB_MineableChocolate"]/building/veinMineable</xpath>
+		<value>
+			<veinMineable>true</veinMineable>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="vanillaexpanded.vexploratione">
+		<xpath>Defs/ThingDef[defName="VEE_MineableJadeite"]/building/veinMineable</xpath>
+		<value>
+			<veinMineable>true</veinMineable>
+		</value>
+	</Operation>
+</Patch>

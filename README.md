@@ -15,7 +15,8 @@ conditionals that retire themselves once that mod is fixed.
 | `Patches/FlourishEveryday_TelescopeMirror.xml` | Flourish - Everyday Animations | Telescope pose mirrored so the pawn stands on the eyepiece side, facing East |
 | `Patches/ShowMeYourTools_NoTelescopeSpyglass.xml` | Show Me Your Tools | No floating handheld spyglass while using a telescope (kept for skygazing) |
 | `Patches/HaulersDream_BatchCraftAnimations.xml` | Hauler's Dream | Batch crafting gets the same Flourish animations and Show Me Your Tools tools as a normal bill |
+| `Patches/VeinMining_ChocolateJadeite.xml` | Alpha Biomes + Vanilla Landmarks Expanded | Chocolate and jadeite rock can be designated with "Mine vein" |
 
-Load order: after VQE Ancients, Cyanobot's Plant Gen Patches, Consistent Text and Flourish Everyday (declared in `About/About.xml`).
+Load order: after VQE Ancients, Cyanobot's Plant Gen Patches, Consistent Text, Flourish Everyday, Alpha Biomes and Vanilla Landmarks Expanded (declared in `About/About.xml`).
 
 Companion C# fixes: [Harmony3StrictCompat](https://github.com/hugalafutro/Harmony3StrictCompat).
