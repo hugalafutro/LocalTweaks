@@ -14,6 +14,7 @@
     <li>vanillaexpanded.vexploratione</li>
     <li>pphhyy.guldennew</li>
     <li>biomesteam.biomescaverns</li>
+    <li>vanillaexpanded.vfecore</li>
     <li>astryl.flourisheveryday</li>
   </loadAfter>
   <url>https://github.com/hugalafutro/LocalTweaks</url>
@@ -28,5 +29,6 @@
 - Hauler's Dream: batch crafting gets the same Flourish animations and Show Me Your Tools tools as a normal bill.
 - Alpha Biomes + Vanilla Landmarks Expanded: chocolate and jadeite rock can be designated with "Mine vein".
 - Gulden Biome (Continued): capricorns butcher into vanilla horse meat, so "horse meat" no longer shows twice.
-- Biomes! Caverns: only one "nogtyl" in the plant menu (the cave copy is no longer sowable).</description>
+- Biomes! Caverns: only one "nogtyl" in the plant menu (the cave copy is no longer sowable).
+- Vanilla Furniture Expanded: the ergonomic chair can be placed over existing chairs and stools to replace them.</description>
 </ModMetaData>

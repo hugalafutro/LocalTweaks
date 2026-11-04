@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Vanilla chairs and stools carry replaceTags "Chair", which lets a chair blueprint go straight onto another chair
+	     (Replace Stuff uses the same tags). VFE's ergonomic chair (Seat_ModernChair) has none, so placing it over a
+	     chair is refused. Give it the tag. -->
+	<Operation Class="PatchOperationConditional" MayRequire="VanillaExpanded.VFECore">
+		<xpath>Defs/ThingDef[defName="Seat_ModernChair"]/replaceTags</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Seat_ModernChair"]/replaceTags</xpath>
+			<value>
+				<li>Chair</li>
+			</value>
+		</match>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Seat_ModernChair"]</xpath>
+			<value>
+				<replaceTags>
+					<li>Chair</li>
+				</replaceTags>
+			</value>
+		</nomatch>
+	</Operation>
+</Patch>
