@@ -19,6 +19,7 @@ conditionals that retire themselves once that mod is fixed.
 | `Patches/Gulden_CapricornHorseMeat.xml` | Gulden Biome (Continued) | Capricorns butcher into vanilla horse meat, so "horse meat" no longer shows twice (old saves: rename `Meat_Gulden_Animal_Capricorn` to `Meat_Horse`) |
 | `Patches/BiomesCaverns_SingleNogtyl.xml` | Biomes! Caverns | Only one "nogtyl" in the plant menu: the cave copy (`BMT_Nogtyl`) is no longer sowable, the marsh one (`BMT_NogtylMarsh`) is; wild growth unchanged |
 | `Patches/VFE_ErgonomicChairReplacesChairs.xml` | Vanilla Furniture Expanded | The ergonomic chair gets the `Chair` replace tag, so it can be placed directly over existing chairs and stools (with Replace Stuff it swaps in place) |
+| `Patches/VFE_WeaponRackReplacesReelRack.xml` | Vanilla Furniture Expanded + Reel's Expanded Storage | VFE's 2x1 weapon rack (12 weapons) and Reel's 2x1 wooden weapon rack (8) share the replace tag `WeaponRack2x1`, so one can be placed over the other and replaces it in place |
 
 Load order: after VQE Ancients, Cyanobot's Plant Gen Patches, Consistent Text, Flourish Everyday, Alpha Biomes, Vanilla Landmarks Expanded, Gulden Biome, Biomes! Caverns and Vanilla Furniture Expanded (declared in `About/About.xml`).
 
