@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- Loading Screen Repository's blueprint tip (its "Mods and Shit/Blueprints" folder only loads for the old
+	     defi.blueprints.fork), here for the 1.7 Waylith fork. -->
+	<TipSetDef MayRequire="ferny.loadingscreenrepository,nova.blueprints.waylith17">
+		<defName>LocalTweaks_BlueprintsTips</defName>
+		<tips>
+			<li>If you get tired of building the same thing over and over, consider creating a blueprint for it.</li>
+		</tips>
+	</TipSetDef>
+</Defs>

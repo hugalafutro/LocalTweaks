@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Better Architect Menu ships a Blueprints patch ("Mods and Shit/Blueprints") that nests the Blueprints
+	     architect tab under its Colony group, but its LoadFolders.xml only loads it for the old
+	     defi.blueprints.fork. Same patch here for the 1.7 Waylith fork, which keeps the defName "Blueprints".
+	     The matching loading-screen tip is in Defs/Blueprints_Waylith17_Tips.xml. -->
+	<Operation Class="PatchOperationAdd" MayRequire="ferny.betterarchitect,nova.blueprints.waylith17">
+		<xpath>Defs/DesignationCategoryDef[defName="Blueprints"]</xpath>
+		<value>
+			<modExtensions>
+				<li Class="BetterArchitect.NestedCategoryExtension">
+					<parentCategory>Ferny_Colony</parentCategory>
+				</li>
+			</modExtensions>
+		</value>
+	</Operation>
+</Patch>

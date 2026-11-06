@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Hospitality: Casino turns the vanilla poker table into casino equipment (Patch_VanillaPokerTable.xml): a
+	     CompVendingMachine (pricing gizmo, silver held, total earned), joyKind Gamble and its own paying driver.
+	     Here two more tables get the comp but keep their own drivers (tongo cards, billiards shots); the charge per
+	     game comes from Harmony3StrictCompat (JoyUtility.JoyTickCheckEnd prefix). Without that mod they only show
+	     the gizmo. Colonists play for free either way (Casino charges pawns of another faction only). -->
+
+	<!-- Det's Boglegs tongo table: 2x2 poker table, so it also becomes Gamble like Casino's poker table. -->
+	<Operation Class="PatchOperationConditional" MayRequire="adamas.hospitalitycasino,det.boglegs">
+		<xpath>Defs/ThingDef[defName="DV_TongoTable"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="DV_TongoTable"]/comps</xpath>
+			<value>
+				<li Class="HospitalityCasino.CompProperties_VendingMachine">
+					<compClass>HospitalityCasino.CompVendingMachine</compClass>
+					<defaultPrice>10</defaultPrice>
+					<noToggle>true</noToggle>
+				</li>
+			</value>
+		</match>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="DV_TongoTable"]</xpath>
+			<value>
+				<comps>
+					<li Class="HospitalityCasino.CompProperties_VendingMachine">
+						<compClass>HospitalityCasino.CompVendingMachine</compClass>
+						<defaultPrice>10</defaultPrice>
+						<noToggle>true</noToggle>
+					</li>
+				</comps>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="adamas.hospitalitycasino,det.boglegs">
+		<xpath>Defs/ThingDef[defName="DV_TongoTable"]/building/joyKind/text()</xpath>
+		<value>Gamble</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="adamas.hospitalitycasino,det.boglegs">
+		<xpath>Defs/JoyGiverDef[defName="DV_Play_Tongo"]/joyKind/text()</xpath>
+		<value>Gamble</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="adamas.hospitalitycasino,det.boglegs">
+		<xpath>Defs/JobDef[defName="DV_PlayTongo"]/joyKind/text()</xpath>
+		<value>Gamble</value>
+	</Operation>
+
+	<!-- Vanilla billiards table: comp only, stays Gaming_Dexterity recreation. -->
+	<Operation Class="PatchOperationConditional" MayRequire="adamas.hospitalitycasino">
+		<xpath>Defs/ThingDef[defName="BilliardsTable"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="BilliardsTable"]/comps</xpath>
+			<value>
+				<li Class="HospitalityCasino.CompProperties_VendingMachine">
+					<compClass>HospitalityCasino.CompVendingMachine</compClass>
+					<defaultPrice>10</defaultPrice>
+					<noToggle>true</noToggle>
+				</li>
+			</value>
+		</match>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="BilliardsTable"]</xpath>
+			<value>
+				<comps>
+					<li Class="HospitalityCasino.CompProperties_VendingMachine">
+						<compClass>HospitalityCasino.CompVendingMachine</compClass>
+						<defaultPrice>10</defaultPrice>
+						<noToggle>true</noToggle>
+					</li>
+				</comps>
+			</value>
+		</nomatch>
+	</Operation>
+</Patch>

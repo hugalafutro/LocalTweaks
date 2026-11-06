@@ -19,7 +19,9 @@ conditionals that retire themselves once that mod is fixed.
 | `Patches/Gulden_CapricornHorseMeat.xml` | Gulden Biome (Continued) | Capricorns butcher into vanilla horse meat, so "horse meat" no longer shows twice (old saves: rename `Meat_Gulden_Animal_Capricorn` to `Meat_Horse`) |
 | `Patches/BiomesCaverns_SingleNogtyl.xml` | Biomes! Caverns | Only one "nogtyl" in the plant menu: the cave copy (`BMT_Nogtyl`) is no longer sowable, the marsh one (`BMT_NogtylMarsh`) is; wild growth unchanged |
 | `Patches/VFE_ErgonomicChairReplacesChairs.xml` | Vanilla Furniture Expanded | The ergonomic chair gets the `Chair` replace tag, so it can be placed directly over existing chairs and stools (with Replace Stuff it swaps in place) |
+| `Patches/Casino_TableGames.xml` | Hospitality: Casino + Det's Xenotypes - Boglegs | The tongo table and the vanilla billiards table become casino equipment like Casino's poker table: pricing gizmo, silver held and total earned. Tongo also becomes `Gamble` joy (as poker does); billiards stays `Gaming_Dexterity`. Both keep their own job drivers (tongo cards, billiards shots); the charge per game comes from Harmony3StrictCompat. Colonists play for free |
+| `Patches/Blueprints_Waylith17_FernyCompat.xml`, `Defs/Blueprints_Waylith17_Tips.xml` | Blueprints - 1.7 Waylith (Unofficial) + Better Architect Menu / Loading Screen Repository | Those two only load their Blueprints extras for the old `defi.blueprints.fork`; same extras for the 1.7 fork: Blueprints tab nested under Colony, and the blueprint loading tip |
 
-Load order: after VQE Ancients, Cyanobot's Plant Gen Patches, Consistent Text, Flourish Everyday, Alpha Biomes, Vanilla Landmarks Expanded, Gulden Biome, Biomes! Caverns and Vanilla Furniture Expanded (declared in `About/About.xml`).
+Load order: after VQE Ancients, Cyanobot's Plant Gen Patches, Consistent Text, Flourish Everyday, Alpha Biomes, Vanilla Landmarks Expanded, Gulden Biome, Biomes! Caverns, Vanilla Furniture Expanded, Det's Boglegs and Hospitality: Casino (declared in `About/About.xml`).
 
 Companion C# fixes: [Harmony3StrictCompat](https://github.com/hugalafutro/Harmony3StrictCompat).
