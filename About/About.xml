@@ -26,7 +26,6 @@
 - Consistent Text: restores the Alpha Animals refinery recipe label (AA_ExtractUranium) its patch deletes.
 - Alpha Genes + Cherry Picker: removes the cherry-picked AG_DecreasedCommandRange gene from the random-mutation blacklist.
 - Flourish - Everyday Animations + Show Me Your Tools: children's floor drawing without Flourish's extra hands and body-lowering track.
-- Flourish - Everyday Animations: telescope pose mirrored so the pawn stands on the eyepiece side, facing East.
 - Show Me Your Tools: no floating handheld spyglass while using a telescope (kept for skygazing).
 - Hauler's Dream: batch crafting gets the same Flourish animations and Show Me Your Tools tools as a normal bill.
 - Alpha Biomes + Vanilla Landmarks Expanded: chocolate and jadeite rock can be designated with "Mine vein".
@@ -35,5 +34,6 @@
 - Vanilla Furniture Expanded: the ergonomic chair can be placed over existing chairs and stools to replace them.
 - Hospitality: Casino + Det's Xenotypes - Boglegs + VFE Settlers: the tongo, billiards and faro tables are casino equipment like the poker table (pricing gizmo, earnings; guests pay per game, faro through Casino's own poker driver).
 - Blueprints - 1.7 Waylith + Better Architect Menu / Loading Screen Repository: Blueprints tab nested under Colony and the blueprint loading tip, as those mods do for the old Blueprints fork.
-- Core + VFE Tribals: hoopstone ring, Game of Ur board and floor painting stay buildable after the colony advances past Neolithic.</description>
+- Core + VFE Tribals: hoopstone ring, Game of Ur board and floor painting stay buildable after the colony advances past Neolithic.
+- MSS Flavour Pack: the exorcism operation costs 10 gold as described, not 100.</description>
 </ModMetaData>

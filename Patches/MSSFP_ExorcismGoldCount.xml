@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- MSS Flavour Pack's exorcism asks for gold with count 10, but recipe counts are volume units and gold is
+	     smallVolume stuff (0.1 per piece), so the game wanted 100 gold while the bill and the mod say 10.
+	     Count 1 = 10 gold. Only matches while the mod still ships count 10, so it retires if the author fixes it. -->
+	<Operation Class="PatchOperationReplace" MayRequire="MSS.FlavourPack">
+		<xpath>Defs/RecipeDef[defName="MSS_FP_Exorcism"]/ingredients/li[filter/thingDefs/li="Gold" and count="10"]/count</xpath>
+		<value>
+			<count>1</count>
+		</value>
+	</Operation>
+</Patch>
