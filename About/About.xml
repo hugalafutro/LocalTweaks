@@ -33,6 +33,7 @@
 - Gulden Biome (Continued): capricorns butcher into vanilla horse meat, so "horse meat" no longer shows twice.
 - Biomes! Caverns: only one "nogtyl" in the plant menu (the cave copy is no longer sowable).
 - Vanilla Furniture Expanded: the ergonomic chair can be placed over existing chairs and stools to replace them.
-- Hospitality: Casino + Det's Xenotypes - Boglegs: the tongo table and the billiards table are casino equipment like the poker table (pricing gizmo, earnings; guests pay per game through Harmony3StrictCompat).
-- Blueprints - 1.7 Waylith + Better Architect Menu / Loading Screen Repository: Blueprints tab nested under Colony and the blueprint loading tip, as those mods do for the old Blueprints fork.</description>
+- Hospitality: Casino + Det's Xenotypes - Boglegs + VFE Settlers: the tongo, billiards and faro tables are casino equipment like the poker table (pricing gizmo, earnings; guests pay per game, faro through Casino's own poker driver).
+- Blueprints - 1.7 Waylith + Better Architect Menu / Loading Screen Repository: Blueprints tab nested under Colony and the blueprint loading tip, as those mods do for the old Blueprints fork.
+- Core + VFE Tribals: hoopstone ring, Game of Ur board and floor painting stay buildable after the colony advances past Neolithic.</description>
 </ModMetaData>

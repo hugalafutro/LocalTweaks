@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Vanilla hides a building from the Architect menu once the player faction's tech level is above its
+	     maxTechLevelToBuild (Designator_Build.Visible). Vanilla never raises that level, but VFE Tribals' era
+	     advancement does (GameComponent_Tribals sets Faction.OfPlayer.def.techLevel), so a tribal start loses
+	     these Neolithic-only buildings at Medieval. Drop the cap so they stay buildable. -->
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="HoopstoneRing" or defName="GameOfUrBoard"]/maxTechLevelToBuild</xpath>
+	</Operation>
+	<Operation Class="PatchOperationRemove" MayRequire="oskarpotocki.vfe.tribals">
+		<xpath>Defs/ThingDef[defName="VFET_FloorPainting"]/maxTechLevelToBuild</xpath>
+	</Operation>
+</Patch>

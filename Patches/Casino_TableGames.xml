@@ -4,7 +4,52 @@
 	     CompVendingMachine (pricing gizmo, silver held, total earned), joyKind Gamble and its own paying driver.
 	     Here two more tables get the comp but keep their own drivers (tongo cards, billiards shots); the charge per
 	     game comes from Harmony3StrictCompat (JoyUtility.JoyTickCheckEnd prefix). Without that mod they only show
-	     the gizmo. Colonists play for free either way (Casino charges pawns of another faction only). -->
+	     the gizmo. Colonists play for free either way (Casino charges pawns of another faction only).
+	     The VFE Settlers faro table already plays with vanilla's poker driver, so it gets Casino's full poker
+	     treatment instead, paying driver included (needs nothing from Harmony3StrictCompat). -->
+
+	<!-- VFE Settlers faro table: same as Casino does for the vanilla poker table. -->
+	<Operation Class="PatchOperationConditional" MayRequire="adamas.hospitalitycasino,oskarpotocki.vanillafactionsexpanded.settlersmodule">
+		<xpath>Defs/ThingDef[defName="TableFaro"]/comps</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="TableFaro"]/comps</xpath>
+			<value>
+				<li Class="HospitalityCasino.CompProperties_VendingMachine">
+					<compClass>HospitalityCasino.CompVendingMachine</compClass>
+					<defaultPrice>10</defaultPrice>
+					<noToggle>true</noToggle>
+				</li>
+			</value>
+		</match>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="TableFaro"]</xpath>
+			<value>
+				<comps>
+					<li Class="HospitalityCasino.CompProperties_VendingMachine">
+						<compClass>HospitalityCasino.CompVendingMachine</compClass>
+						<defaultPrice>10</defaultPrice>
+						<noToggle>true</noToggle>
+					</li>
+				</comps>
+			</value>
+		</nomatch>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="adamas.hospitalitycasino,oskarpotocki.vanillafactionsexpanded.settlersmodule">
+		<xpath>Defs/ThingDef[defName="TableFaro"]/building/joyKind/text()</xpath>
+		<value>Gamble</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="adamas.hospitalitycasino,oskarpotocki.vanillafactionsexpanded.settlersmodule">
+		<xpath>Defs/JoyGiverDef[defName="Play_Faro"]/joyKind/text()</xpath>
+		<value>Gamble</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="adamas.hospitalitycasino,oskarpotocki.vanillafactionsexpanded.settlersmodule">
+		<xpath>Defs/JobDef[defName="Play_Faro"]/joyKind/text()</xpath>
+		<value>Gamble</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="adamas.hospitalitycasino,oskarpotocki.vanillafactionsexpanded.settlersmodule">
+		<xpath>Defs/JobDef[defName="Play_Faro"]/driverClass/text()</xpath>
+		<value>HospitalityCasino.JobDriver_PlayPokerForMoney</value>
+	</Operation>
 
 	<!-- Det's Boglegs tongo table: 2x2 poker table, so it also becomes Gamble like Casino's poker table. -->
 	<Operation Class="PatchOperationConditional" MayRequire="adamas.hospitalitycasino,det.boglegs">
