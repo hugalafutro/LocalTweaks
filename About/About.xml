@@ -38,6 +38,5 @@
 - Blueprints - 1.7 Waylith + Better Architect Menu / Loading Screen Repository: Blueprints tab nested under Colony and the blueprint loading tip, as those mods do for the old Blueprints fork.
 - Core + VFE Tribals: hoopstone ring, Game of Ur board and floor painting stay buildable after the colony advances past Neolithic.
 - MSS Flavour Pack: the exorcism operation costs 10 gold as described, not 100.
-- Tweaks Galore: the "Trader available" alert no longer shows a literal {0} before the trader list.
-- Det's Xenotypes - Buzzers + VRE Insector: Buzzers' compound eyes use VRE Insector's texture instead of a missing one (magenta square).</description>
+- Tweaks Galore: the "Trader available" alert no longer shows a literal {0} before the trader list.</description>
 </ModMetaData>
