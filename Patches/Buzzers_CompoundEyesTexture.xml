@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Det's Xenotypes - Buzzers: the DV_Eyes_Compound head attachment points at
+	     Things/Pawn/Humanlike/HeadAttachments/CompoundEyes/CompoundEyes, a texture no mod ships, so Buzzers draw a
+	     magenta "missing texture" square on the head. Point it at VRE Insector's compound eyes (same look, used by
+	     Insector's own genes). Matches the broken path only, so it stops applying once Buzzers changes it. -->
+	<Operation Class="PatchOperationConditional" MayRequire="det.buzzers,vanillaracesexpanded.insector">
+		<xpath>Defs/GeneDef[defName="DV_Eyes_Compound"]/renderNodeProperties/li/texPath[text()="Things/Pawn/Humanlike/HeadAttachments/CompoundEyes/CompoundEyes"]</xpath>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/GeneDef[defName="DV_Eyes_Compound"]/renderNodeProperties/li/texPath[text()="Things/Pawn/Humanlike/HeadAttachments/CompoundEyes/CompoundEyes"]</xpath>
+			<value>
+				<texPath>Things/Pawn/Humanlike/HeadAttachments/CompoundEyes</texPath>
+			</value>
+		</match>
+	</Operation>
+</Patch>
