@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Tweaks Galore's "Trader available" alert builds its explanation as
+  Translate("TweaksGalore.PawnTraderDesc") + list, so the {0} in its keyed string is never filled and prints
+  literally. Same key without the placeholder; keyed entries from a later mod replace earlier ones
+  (LoadedLanguage.LoadFromFile_Keyed uses SetOrAdd). Drop this file when Tweaks Galore fixes Alert_PawnTrader.
+-->
+<LanguageData>
+  <TweaksGalore.PawnTraderDesc>Traders from these factions are visiting the colony:\n\n</TweaksGalore.PawnTraderDesc>
+</LanguageData>

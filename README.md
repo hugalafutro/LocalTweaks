@@ -22,6 +22,7 @@ conditionals that retire themselves once that mod is fixed.
 | `Patches/Blueprints_Waylith17_FernyCompat.xml`, `Defs/Blueprints_Waylith17_Tips.xml` | Blueprints - 1.7 Waylith (Unofficial) + Better Architect Menu / Loading Screen Repository | Those two only load their Blueprints extras for the old `defi.blueprints.fork`; same extras for the 1.7 fork: Blueprints tab nested under Colony, and the blueprint loading tip |
 | `Patches/TechLevel_KeepNeolithicBuildings.xml` | Core + Vanilla Factions Expanded - Tribals | Hoopstone ring, Game of Ur board and VFE Tribals' floor painting stay buildable after VFE Tribals advances the colony past Neolithic (their `maxTechLevelToBuild` cap removed) |
 | `Patches/MSSFP_ExorcismGoldCount.xml` | MSS Flavour Pack | The exorcism operation costs 10 gold as its description says, not 100 (its `count` 10 was in volume units, and gold counts 0.1 per piece) |
+| `Languages/English/Keyed/TweaksGalore_Fixes.xml` | Tweaks Galore | The "Trader available" alert no longer shows a literal `{0}` before the trader list (its code appends the list to the translated string instead of formatting it); same key without the placeholder, later-loaded keyed entries replace earlier ones |
 
 Load order: after VQE Ancients, Cyanobot's Plant Gen Patches, Consistent Text, Flourish Everyday, Alpha Biomes, Vanilla Landmarks Expanded, Gulden Biome, Biomes! Caverns, Vanilla Furniture Expanded, Det's Boglegs and Hospitality: Casino (declared in `About/About.xml`).
 
