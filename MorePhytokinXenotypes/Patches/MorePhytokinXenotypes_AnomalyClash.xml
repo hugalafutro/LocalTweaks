@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- More Phytokin Xenotypes (workshop 3813857865, 0.1.1): with Anomaly + Odyssey + Starjack its LoadFolders.xml
+       enables both Modules/Anomaly and Modules/Odyssey. Six Defs files share the same relative path in both
+       (AbilityDefs/Abilities.xml, GeneDefs/Genes.xml, IncidentDefs/Incidents.xml, ThingDefs/Things.xml,
+       ThoughtDefs/Thoughts.xml, XenotypeDefs/Xenotypes.xml); the game keeps one file per relative path, the last
+       load folder wins, so the Anomaly copies (carrionkin, harbingerkin) never load and the mod's code crashes on
+       the missing defs. The Defs folder next to this patch ships byte copies of those six files under other names
+       (same method as adherry's workshop fix 3830670122). LoadFolders.xml loads this folder only with all four mods.
+       It sits in LocalTweaks because ParentName resolves only from mods loaded earlier, and Harmony3StrictCompat loads
+       before Core. Harmony3StrictCompat.cs (MpxAnomalyCopies) errors at startup when the upstream files change or vanish.
+       The tests below fail with a red patch error as soon as any of those defs exists twice, i.e. the upstream mod
+       fixed the clash and the copies must be deleted. -->
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationTest">
+        <xpath>Defs[not(AbilityDef[defName="MPX_SummonGloomTree"][2])]</xpath>
+      </li>
+      <li Class="PatchOperationTest">
+        <xpath>Defs[not(GeneDef[defName="MPX_Gene_DeathTreeAbility"][2])]</xpath>
+      </li>
+      <li Class="PatchOperationTest">
+        <xpath>Defs[not(IncidentDef[defName="MPX_Incident_DeathTreeCocoon"][2])]</xpath>
+      </li>
+      <li Class="PatchOperationTest">
+        <xpath>Defs[not(ThingDef[defName="MPX_MeatMush"][2])]</xpath>
+      </li>
+      <li Class="PatchOperationTest">
+        <xpath>Defs[not(ThoughtDef[defName="MPX_HumanlikeEntityDied"][2])]</xpath>
+      </li>
+      <li Class="PatchOperationTest">
+        <xpath>Defs[not(XenotypeDef[defName="MPX_Xenotype_DeathTree"][2])]</xpath>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

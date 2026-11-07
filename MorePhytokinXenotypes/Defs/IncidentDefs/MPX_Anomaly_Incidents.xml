@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>MPX_Incident_DeathTreeCocoon</defName>
+    <label>harbinger tree cocoon formation</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>MorePhytokinXenotypes.IncidentWorker_MPX_CocoonBirth</workerClass>
+    <letterLabel>Harbinger tree forms a cocoon</letterLabel>
+    <letterText>A mature harbinger tree has formed a cocoon! After more than ten days, it will hatch one or more harbingerkin children. Harbingerkin serve as the trees' external offensive organs. They cannot reproduce themselves and are produced by harbinger trees. Once mature, they help the trees, which cannot hunt on their own, obtain corpses so that the grove can grow.
+
+After hatching, the harbingerkin will wander like wild children, surviving on nutrition drawn from harbinger trees until they can hunt for themselves. You may choose to adopt them; they belong to no faction.</letterText>
+    <letterDef>NeutralEvent</letterDef>
+    <earliestDay>4</earliestDay>
+    <baseChance>0.02</baseChance>
+    <requireColonistsPresent>true</requireColonistsPresent>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>MPX_Incident_HoraxCultTakeCocoon</defName>
+    <label>Horax cult takes harbingerkin</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>MorePhytokinXenotypes.IncidentWorker_MPX_HoraxCultRetrieval</workerClass>
+    <letterLabel>Horax cult takes harbingerkin</letterLabel>
+    <letterText>A group from the Horax cult wants to take the newly sprouted harbingerkin children from the colony and raise them in the cult. They will not attack your colonists unprovoked and will leave after taking the harbingerkin.</letterText>
+    <letterDef>NeutralEvent</letterDef>
+    <earliestDay>10</earliestDay>
+    <baseChance>0.01</baseChance>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>MPX_Incident_DeathTreeWandererJoin</defName>
+    <label>carrionkin wanderers join</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>MorePhytokinXenotypes.Events.IncidentWorker_MPX_DeathTreeWandererJoin</workerClass>
+    <earliestDay>10</earliestDay>
+    <baseChance>0</baseChance>
+    <pawnKind>Villager</pawnKind>
+    <requireColonistsPresent>true</requireColonistsPresent>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>MPX_Incident_DeathTreeGuardianJoin</defName>
+    <label>harbingerkin guardians of harbinger trees join</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>MorePhytokinXenotypes.Events.IncidentWorker_MPX_DeathTreeGuardianJoin</workerClass>
+    <earliestDay>20</earliestDay>
+    <baseChance>0.03</baseChance>
+    <pawnKind>Villager</pawnKind>
+    <requireColonistsPresent>true</requireColonistsPresent>
+  </IncidentDef>
+</Defs>

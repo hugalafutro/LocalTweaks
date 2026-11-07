@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThoughtDef>
+    <defName>MPX_HumanlikeEntityDied</defName>
+    <thoughtClass>RimWorld.Thought_Memory</thoughtClass>
+    <label>witnessed an entity's death</label>
+    <description>I saw an entity being killed. Those entities and I are all creations of Horax. They will come to kill me next!</description>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>witnessed an entity's death</label>
+        <description>I saw an entity being killed. Those entities and I are all creations of Horax. They will come to kill me next!</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>MPX_KilledHumanlikeEntity</defName>
+    <thoughtClass>RimWorld.Thought_Memory</thoughtClass>
+    <label>killed an entity</label>
+    <description>Horax created me, yet I killed another entity with my own hands. I still remember the days when we lived together in peace.</description>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>killed an entity</label>
+        <description>Horax created me, yet I killed another entity with my own hands. I still remember the days when we lived together in peace.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>MPX_HumanlikeEntitySocial</defName>
+    <thoughtClass>RimWorld.Thought_SituationalSocial</thoughtClass>
+    <workerClass>MorePhytokinXenotypes.ThoughtWorker_MPX_HumanlikeEntitySocial</workerClass>
+    <label>entity</label>
+    <description>This person is an entity.</description>
+    <stages>
+      <li>
+        <label>entity</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>MPX_GloomTreePresence</defName>
+    <thoughtClass>RimWorld.Thought_Situational</thoughtClass>
+    <workerClass>MorePhytokinXenotypes.ThoughtWorker_MPX_GloomTreePresence</workerClass>
+    <label>harbinger tree in colony</label>
+    <description>There are many harbinger trees in the colony. Horax's power is growing.</description>
+    <stages>
+      <li>
+        <label>harbinger tree in colony</label>
+        <description>There are many harbinger trees in the colony. Horax's power is growing.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>MPX_NoGloomTree</defName>
+    <thoughtClass>RimWorld.Thought_Situational</thoughtClass>
+    <workerClass>MorePhytokinXenotypes.ThoughtWorker_MPX_NoGloomTree</workerClass>
+    <label>no harbinger tree in colony</label>
+    <description>There are no harbinger trees anywhere in the colony. What purpose do we harbingerkin have, then?</description>
+    <stages>
+      <li>
+        <label>no harbinger tree in colony</label>
+        <description>There are no harbinger trees anywhere in the colony. What purpose do we harbingerkin have, then?</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>MPX_DeathTreeAversionSocial</defName>
+    <thoughtClass>RimWorld.Thought_SituationalSocial</thoughtClass>
+    <workerClass>MorePhytokinXenotypes.ThoughtWorker_MPX_DeathTreeAversionSocial</workerClass>
+    <label>abhorrent carrionkin lineage</label>
+    <description>The competing carrionkin lineage provokes instinctive hostility.</description>
+    <stages>
+      <li>
+        <label>abhorrent carrionkin lineage</label>
+        <baseOpinionOffset>-60</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>MPX_DeathTreeInColony</defName>
+    <thoughtClass>RimWorld.Thought_Situational</thoughtClass>
+    <workerClass>MorePhytokinXenotypes.ThoughtWorker_MPX_DeathTreeInColony</workerClass>
+    <label>carrionkin in colony</label>
+    <description>I hate these carrionkin. They are crowding out the living space of harbinger trees and the harbingerkin.</description>
+    <stages>
+      <li>
+        <label>carrionkin in colony</label>
+        <description>I hate these carrionkin. They are crowding out the living space of harbinger trees and the harbingerkin.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>MPX_AteMeatMush</defName>
+    <thoughtClass>Thought_FoodEaten</thoughtClass>
+    <showBubble>true</showBubble>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>ate raw meat mush</label>
+        <description>So the only difference from eating a corpse is that someone spread it out evenly?</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>MPX_AteCookedMeatMush</defName>
+    <thoughtClass>Thought_FoodEaten</thoughtClass>
+    <showBubble>true</showBubble>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>ate cooked meat mush</label>
+        <description>I still want to eat some decent meat.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>MPX_WitnessedEntityDeathHonorable</defName>
+    <thoughtClass>RimWorld.Thought_Memory</thoughtClass>
+    <label>witnessed an entity's death</label>
+    <description>A dead entity is a good entity.</description>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>witnessed an entity's death</label>
+        <description>A dead entity is a good entity.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>MPX_KilledEntityHonorable</defName>
+    <thoughtClass>RimWorld.Thought_Memory</thoughtClass>
+    <label>killed an entity</label>
+    <description>I killed an entity. Oh, these twisted, inhuman horrors deserve to die!</description>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>killed an entity</label>
+        <description>I killed an entity. Oh, these twisted, inhuman horrors deserve to die!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

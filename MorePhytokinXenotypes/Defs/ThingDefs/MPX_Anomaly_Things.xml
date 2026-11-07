@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>MPX_MeatMush</defName>
+    <label>meat mush</label>
+    <description>A mass of flesh and skin pounded together into a paste. Colonists may be reluctant to eat it, but a harbinger tree can absorb meat mush more quickly and extract more nutrition from it.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <graphicData Inherit="False">
+      <texPath>Things/Item/Resource/MeatMush/StackCount</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <tickerType>Rare</tickerType>
+    <stackLimit>75</stackLimit>
+    <possessionCount>5</possessionCount>
+    <pathCost>14</pathCost>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <rotatable>false</rotatable>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Beauty>-4</Beauty>
+      <DeteriorationRate>6</DeteriorationRate>
+      <MarketValue>0.8</MarketValue>
+      <Nutrition>0.05</Nutrition>
+      <Mass>0.03</Mass>
+      <Flammability>0.5</Flammability>
+      <FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
+    </statBases>
+    <thingCategories>
+      <li>MeatRaw</li>
+    </thingCategories>
+    <alwaysHaulable>true</alwaysHaulable>
+    <ingestible>
+      <foodType>Meat</foodType>
+      <preferability>RawBad</preferability>
+      <ingestEffect>EatMeat</ingestEffect>
+      <ingestSound>RawMeat_Eat</ingestSound>
+      <tasteThought>MPX_AteMeatMush</tasteThought>
+    </ingestible>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>2</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+      <li>
+        <compClass>CompHarbingerTreeConsumable</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="MealCookedIngredientless">
+    <defName>MPX_CookedMeatMush</defName>
+    <label>cooked meat mush</label>
+    <description>Meat mush cooked into a safer, if still unpleasant, meal.</description>
+    <graphicData Inherit="False">
+      <texPath>Things/Item/Resource/MeatMush/StackCount</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <stackLimit>10</stackLimit>
+    <statBases>
+      <MarketValue>2.4</MarketValue>
+      <Nutrition>0.05</Nutrition>
+      <Mass>0.05</Mass>
+    </statBases>
+    <ingestible>
+      <foodType>Meal</foodType>
+      <preferability>MealAwful</preferability>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>Meal_Eat</ingestSound>
+      <tasteThought>MPX_AteCookedMeatMush</tasteThought>
+    </ingestible>
+    <comps>
+      <li>
+        <compClass>CompHarbingerTreeConsumable</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>MPX_Entity_Cocoon</defName>
+    <label>harbingerkin cocoon</label>
+    <description>A simple organic cocoon that keeps a harbingerkin child safe until it hatches.</description>
+    <thingClass>MorePhytokinXenotypes.Building_MPX_Cocoon</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>42</pathCost>
+    <blockWind>true</blockWind>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(1,2)</size>
+    <tickerType>Normal</tickerType>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(1,0,0)</interactionCellOffset>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <graphicData>
+      <texPath>Things/Building/MPX/DeathTreeCocoon</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1, 2)</drawSize>
+      <shadowData>
+        <volume>(0.83, 0.3, 1.7)</volume>
+      </shadowData>
+    </graphicData>
+    <containedPawnsSelectable>false</containedPawnsSelectable>
+    <designationCategory Inherit="False" />
+    <researchPrerequisites Inherit="False" />
+    <costList Inherit="False" />
+    <comps Inherit="False">
+      <li Class="MorePhytokinXenotypes.CompProperties_MPX_CocoonHatch">
+        <hatchDelayTicks>900000</hatchDelayTicks>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="SerumBase">
+    <defName>MPX_DeathTreeEmergencySerum</defName>
+    <label>harbingerkin emergency serum</label>
+    <description>An emergency serum for harbingerkin who have fallen into a hunger coma. Harbingerkin cannot eat and can only draw nutrition from harbinger trees, so a hunger coma is extremely dangerous. This serum forcibly relieves the hunger coma for 12 hours, giving the harbingerkin a chance to reach a harbinger tree and absorb nutrition.</description>
+    <graphicData>
+      <texPath>Things/Item/Serum/DeathTreeEmergencySerum</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="MorePhytokinXenotypes.CompProperties_MPX_DeathTreeEmergencySerum">
+        <hediffDef>MPX_EmergencySerumWakeProtection</hediffDef>
+        <allowRepeatedUse>true</allowRepeatedUse>
+      </li>
+      <li Class="CompProperties_UseEffectPlaySound">
+        <soundOnUsed>MechSerumUsed</soundOnUsed>
+      </li>
+    </comps>
+    <costList>
+      <Neutroamine>10</Neutroamine>
+      <Bioferrite>50</Bioferrite>
+    </costList>
+    <recipeMaker>
+      <workAmount>720</workAmount>
+      <researchPrerequisite>SerumSynthesis</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+</Defs>
