@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- UI Rethemed - Inspector Tabs adds a "Loadout state" card to the top of its Gear tab overview when
+	     Compositable Loadouts is active (its own GearPolicyDef, no setting to hide it). Not wanted here;
+	     Compositable Loadouts' own Gear tab buttons and Assign tab column are untouched. -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>[LFS] UI Rethemed - Inspector Tabs</li>
+		</mods>
+		<match Class="PatchOperationRemove">
+			<xpath>Defs/UIRethemed.InspectorTabs.GearPolicyDef[defName="CompositableLoadouts_State"]</xpath>
+		</match>
+	</Operation>
+</Patch>
