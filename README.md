@@ -25,6 +25,7 @@ conditionals that retire themselves once that mod is fixed.
 | `Patches/ShowMeYourTools_NoTelescopeSpyglass.xml` | Show Me Your Tools | No floating handheld spyglass while using a telescope (kept for skygazing) |
 | `Languages/English/Keyed/TweaksGalore_Fixes.xml` | Tweaks Galore | The "Trader available" alert no longer shows a literal `{0}` before the trader list (its code appends the list to the translated string instead of formatting it); same key without the placeholder, later-loaded keyed entries replace earlier ones |
 | `Patches/VFE_ErgonomicChairReplacesChairs.xml` | Vanilla Furniture Expanded | The ergonomic chair gets the `Chair` replace tag, so it can be placed directly over existing chairs and stools (with Replace Stuff it swaps in place) |
+| `Languages/English/Keyed/VPWE_GivesAbility.xml` | Vanilla Persona Weapons Expanded | The persona-weapon psycast stat line reads "Gives ability" instead of the raw key `VREA.GivesAbility` (its code uses a key that only ships with Vanilla Races Expanded - Archon) |
 | `Patches/VQEA_DeconstructibleTubes.xml` | Vanilla Quests Expanded - Ancients | Decorative pneumatic tubes in vaults can be deconstructed (launch port and termini left alone, they have code behind them) |
 | `Patches/UniversalBlueprints_RimBuilderEnglish.xml` | Universal Blueprints Alpha Pack / DMS Pack | Their one childhood backstory (`rimcreator`, "边缘建造师") ships in Chinese only; English title, short title and description. Both packs define the identical def, so one patch covers whichever is active |
 

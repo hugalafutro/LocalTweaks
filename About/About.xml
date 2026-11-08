@@ -44,5 +44,6 @@
 - Core + VFE Tribals: hoopstone ring, Game of Ur board and floor painting stay buildable after the colony advances past Neolithic.
 - MSS Flavour Pack: the exorcism operation costs 10 gold as described, not 100.
 - Tweaks Galore: the "Trader available" alert no longer shows a literal {0} before the trader list.
-- Universal Blueprints Alpha Pack / DMS Pack: their Chinese-only "rim builder" childhood backstory in English.</description>
+- Universal Blueprints Alpha Pack / DMS Pack: their Chinese-only "rim builder" childhood backstory in English.
+- Vanilla Persona Weapons Expanded: the persona-weapon psycast stat line reads "Gives ability" instead of the raw key VREA.GivesAbility (key only ships with VRE Archon).</description>
 </ModMetaData>

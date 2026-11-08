@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Vanilla Persona Weapons Expanded labels the stat entry for a persona weapon's psycast with
+  Translate("VREA.GivesAbility"), code copied from Vanilla Races Expanded - Archon. The key only ships in
+  Archon's Keyed folder, so without Archon loaded the info screen shows the raw key. Same key and text as
+  Archon's; harmless if Archon is added later (same string). Drop this file when VPWE ships the key itself.
+-->
+<LanguageData>
+  <VREA.GivesAbility>Gives ability</VREA.GivesAbility>
+</LanguageData>
