@@ -9,6 +9,7 @@ conditionals that retire themselves once that mod is fixed.
 |---|---|---|
 | `Patches/VeinMining_ChocolateJadeite.xml` | Alpha Biomes + Vanilla Landmarks Expanded | Chocolate and jadeite rock can be designated with "Mine vein" |
 | `Patches/AlphaGenes_WretchBlacklist_CherryPicked.xml` | Alpha Genes + Cherry Picker | Removes the cherry-picked `AG_DecreasedCommandRange` gene from the random-mutation blacklist (load error "Could not load reference ... AG_DecreasedCommandRange") |
+| `Patches/BigLittleModPatch_LinkableGroupAbstractDefs.xml` | Big Little Mod Patch + Linkable Groups | Drops the entries in its `LinkableGroupDef`s that name abstract parents (`BasicBedBase`, `VFE_*BedBase`, `VFES_AdvancedBedBase`, `TableSimpleProsthetic`) or the 1.5-only `Table_LightEndTable` (load errors "Could not resolve cross-reference to Verse.ThingDef named ... (wanter=affected)"); Linkable Groups already lists the concrete beds, so no link is lost |
 | `Patches/BiomesCaverns_SingleNogtyl.xml` | Biomes! Caverns | Only one "nogtyl" in the plant menu: the cave copy (`BMT_Nogtyl`) is no longer sowable, the marsh one (`BMT_NogtylMarsh`) is; wild growth unchanged |
 | `Patches/Blueprints_Waylith17_FernyCompat.xml`, `Defs/Blueprints_Waylith17_Tips.xml` | Blueprints - 1.7 Waylith (Unofficial) + Better Architect Menu / Loading Screen Repository | Those two only load their Blueprints extras for the old `defi.blueprints.fork`; same extras for the 1.7 fork: Blueprints tab nested under Colony, and the blueprint loading tip |
 | `Patches/ConsistentText_UraniumRecipe.xml` | Consistent Text | Restores the Alpha Animals refinery recipe label (`AA_ExtractUranium`) its patch deletes |
@@ -27,6 +28,6 @@ conditionals that retire themselves once that mod is fixed.
 | `Patches/VQEA_DeconstructibleTubes.xml` | Vanilla Quests Expanded - Ancients | Decorative pneumatic tubes in vaults can be deconstructed (launch port and termini left alone, they have code behind them) |
 | `Patches/UniversalBlueprints_RimBuilderEnglish.xml` | Universal Blueprints Alpha Pack / DMS Pack | Their one childhood backstory (`rimcreator`, "边缘建造师") ships in Chinese only; English title, short title and description. Both packs define the identical def, so one patch covers whichever is active |
 
-Load order: after VQE Ancients, Cyanobot's Plant Gen Patches, Consistent Text, Flourish Everyday, Alpha Biomes, Vanilla Landmarks Expanded, Gulden Biome, Biomes! Caverns, Vanilla Furniture Expanded, Det's Boglegs and Hospitality: Casino (declared in `About/About.xml`).
+Load order: after VQE Ancients, Big Little Mod Patch, Cyanobot's Plant Gen Patches, Consistent Text, Flourish Everyday, Alpha Biomes, Vanilla Landmarks Expanded, Gulden Biome, Biomes! Caverns, Vanilla Furniture Expanded, Det's Boglegs and Hospitality: Casino (declared in `About/About.xml`).
 
 Companion C# fixes: [Harmony3StrictCompat](https://github.com/hugalafutro/Harmony3StrictCompat).

@@ -8,6 +8,7 @@
   </supportedVersions>
   <loadAfter>
     <li>vanillaquestsexpanded.ancients</li>
+    <li>daria40k.biglittlemodpatch</li>
     <li>cyanobot.plantgenpatch</li>
     <li>ferny.consistenttext</li>
     <li>sarg.alphabiomes</li>
@@ -28,6 +29,7 @@
 - Vanilla Quests Expanded - Ancients: decorative pneumatic tubes in vaults can be deconstructed (launch port and termini left alone).
 - Cyanobot's Plant Gen Patches + Biomes! Oasis: drops RG_Plant_JoshuaTree / RG_Plant_WingCactus from biome wild plants while ReGrowth 2 keeps those defs commented out.
 - Consistent Text: restores the Alpha Animals refinery recipe label (AA_ExtractUranium) its patch deletes.
+- Big Little Mod Patch + Linkable Groups: removes the abstract-parent and removed-def entries from its linkable groups that error at startup (the concrete beds are already covered).
 - Alpha Genes + Cherry Picker: removes the cherry-picked AG_DecreasedCommandRange gene from the random-mutation blacklist.
 - Flourish - Everyday Animations + Show Me Your Tools: children's floor drawing without Flourish's extra hands and body-lowering track.
 - Show Me Your Tools: no floating handheld spyglass while using a telescope (kept for skygazing).
