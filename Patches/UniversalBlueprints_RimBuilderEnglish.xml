@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- The Alpha and DMS packs ship their one BackstoryDef (rimcreator, "边缘建造师") in Chinese only.
+	     English text for it; the DMS pack defines the identical def, so one patch covers both. -->
+	<Operation Class="PatchOperationReplace" MayRequireAnyOf="trigger.universalblueprints.alphapack,trigger.universalblueprints.dms">
+		<xpath>Defs/BackstoryDef[defName="rimcreator"]/title</xpath>
+		<value>
+			<title>rim builder</title>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequireAnyOf="trigger.universalblueprints.alphapack,trigger.universalblueprints.dms">
+		<xpath>Defs/BackstoryDef[defName="rimcreator"]/titleShort</xpath>
+		<value>
+			<titleShort>builder</titleShort>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequireAnyOf="trigger.universalblueprints.alphapack,trigger.universalblueprints.dms">
+		<xpath>Defs/BackstoryDef[defName="rimcreator"]/description</xpath>
+		<value>
+			<description>On the fringes of interstellar civilization, {PAWN_nameDef} showed an unusual talent for building from an early age. On forgotten colonies, {PAWN_pronoun} learned to raise sturdy fortifications and practical housing with almost no resources. {PAWN_possessive} hands could turn scrap from ruins into useful structures, a skill worth a great deal to anyone surviving on the rim. {PAWN_pronoun} mastered every construction technique available and learned to plan the most efficient layouts for a hostile environment.</description>
+		</value>
+	</Operation>
+</Patch>
