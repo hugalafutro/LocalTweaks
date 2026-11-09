@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Biomes! Caverns swaps the scanner's PlaceWorker_NotUnderRoof for its own class. Better ground-penetrating scanner's
+	     "allow under a roof" setting removes only the vanilla type, and only when its settings are written, so the scanner
+	     stays blocked. Removing the Biomes class leaves no roof check at launch. Unticking the setting brings the vanilla
+	     check back until the next restart. Retires itself once Biomes drops its replacement. -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/placeWorkers/li[text()="BiomesCaverns.PlaceWorkers.NotUnderRoof"]</xpath>
+		<match Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[defName="GroundPenetratingScanner"]/placeWorkers/li[text()="BiomesCaverns.PlaceWorkers.NotUnderRoof"]</xpath>
+		</match>
+	</Operation>
+</Patch>
