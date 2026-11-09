@@ -46,5 +46,6 @@
 - MSS Flavour Pack: the exorcism operation costs 10 gold as described, not 100.
 - Tweaks Galore: the "Trader available" alert no longer shows a literal {0} before the trader list.
 - Universal Blueprints Alpha Pack / DMS Pack: their Chinese-only "rim builder" childhood backstory in English.
-- Vanilla Persona Weapons Expanded: the persona-weapon psycast stat line reads "Gives ability" instead of the raw key VREA.GivesAbility (key only ships with VRE Archon).</description>
+- Vanilla Persona Weapons Expanded: the persona-weapon psycast stat line reads "Gives ability" instead of the raw key VREA.GivesAbility (key only ships with VRE Archon).
+- Fortifications - Industrial + VFE Security: multi-barrel mortar launcher, field howitzer and field cannon keep their gizmo bar (Uninstall included) once player-owned; removes the world artillery comp that null-refs on them.</description>
 </ModMetaData>

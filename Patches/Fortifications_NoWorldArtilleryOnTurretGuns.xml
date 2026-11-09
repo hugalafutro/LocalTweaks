@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- These three guns add VFE Security's world artillery comp but stay Building_TurretGun. The comp casts its parent to
+	     Building_Artillery, so CompGetGizmosExtra null-refs as soon as the player owns one, which also drops the rest of the
+	     gizmo bar, Uninstall included. Removing the comp also fixes guns already on the map; a saved class would not change.
+	     Retires itself once Fortifications gives these defs their own thingClass. -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="FT_TurretHexMortar" or defName="FT_TurretPrince" or defName="FT_TurretEmpero"][not(thingClass)]/comps/li[@Class="VFESecurity.CompProperties_WorldArtillery"]</xpath>
+		<match Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[defName="FT_TurretHexMortar" or defName="FT_TurretPrince" or defName="FT_TurretEmpero"][not(thingClass)]/comps/li[@Class="VFESecurity.CompProperties_WorldArtillery"]</xpath>
+		</match>
+	</Operation>
+</Patch>
