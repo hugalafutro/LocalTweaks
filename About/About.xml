@@ -33,6 +33,7 @@
 - Alpha Genes + Cherry Picker: removes the cherry-picked AG_DecreasedCommandRange gene from the random-mutation blacklist.
 - Flourish - Everyday Animations + Show Me Your Tools: children's floor drawing without Flourish's extra hands and body-lowering track.
 - Show Me Your Tools: no floating handheld spyglass while using a telescope (kept for skygazing).
+- Any scanner work giver missing it (Fortifications - Industrial radio): canBeDoneByMechs false as on the vanilla scanners, so mechs do not null-ref on their missing skills.
 - More Phytokin Xenotypes: with Anomaly + Odyssey + Starjack the Odyssey module shadows six Anomaly def files (same relative path), so carrionkin / harbingerkin never load; ships copies of those files (Harmony3StrictCompat checks them against the mod at startup).
 - Hauler's Dream: batch crafting gets the same Flourish animations and Show Me Your Tools tools as a normal bill.
 - Alpha Biomes + Vanilla Landmarks Expanded: chocolate and jadeite rock can be designated with "Mine vein".

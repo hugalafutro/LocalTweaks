@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- JobDriver_OperateScanner trains the operator's Intellectual skill every tick and mechs have no skills. Vanilla marks
+	     its scanner work givers canBeDoneByMechs=false; Fortifications - Industrial's RadioScan does not, so Research mechs
+	     (Fabricors) take the job and null-ref. Same flag for any scanner work giver missing it. Retires itself once none is. -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/WorkGiverDef[giverClass="WorkGiver_OperateScanner"][not(canBeDoneByMechs)]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/WorkGiverDef[giverClass="WorkGiver_OperateScanner"][not(canBeDoneByMechs)]</xpath>
+			<value>
+				<canBeDoneByMechs>false</canBeDoneByMechs>
+			</value>
+		</match>
+	</Operation>
+</Patch>
