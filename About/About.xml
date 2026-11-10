@@ -33,7 +33,7 @@
 - Flourish - Everyday Animations + Show Me Your Tools: children's floor drawing without Flourish's extra hands and body-lowering track.
 - Show Me Your Tools: no floating handheld spyglass while using a telescope (kept for skygazing).
 - Any scanner work giver missing it (Fortifications - Industrial radio): canBeDoneByMechs false as on the vanilla scanners, so mechs do not null-ref on their missing skills.
-- Rimsenal - Security Pack: range ring while placing the shard sentry, ULM cannon, barrage turret, cannon and rotary gun turret (the incinerator and graser turrets cannot use the vanilla ring).
+- Rimsenal - Security Pack: range ring while placing the shard sentry, ULM cannon, barrage turret, cannon, rotary gun, incinerator and graser turrets (the beam turrets rely on Harmony3StrictCompat).
 - Hauler's Dream: batch crafting gets the same Flourish animations and Show Me Your Tools tools as a normal bill.
 - Alpha Biomes + Vanilla Landmarks Expanded: chocolate and jadeite rock can be designated with "Mine vein".
 - Gulden Biome (Continued): capricorns butcher into vanilla horse meat, so "horse meat" no longer shows twice.

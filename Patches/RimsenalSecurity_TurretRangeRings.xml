@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 	<!-- Rimsenal - Security Pack leaves PlaceWorker_ShowTurretRadius off some turrets, so no range ring while placing them:
-	     shard sentry, ULM cannon + barrage turret (BaseMCBuilding), cannon and rotary gun turret. All five guns use Verb_Shoot.
-	     The incinerator and graser turrets stay without it on purpose: their Verb_ShootBeam is neither Verb_Shoot nor
-	     Verb_Spray, and the vanilla placeworker then null-refs every frame while placing. Retires itself per def once
-	     Rimsenal adds the placeworker. -->
+	     shard sentry, ULM cannon + barrage turret (BaseMCBuilding) and cannon, all Verb_Shoot guns. Retires itself per def
+	     once Rimsenal adds the placeworker. -->
 	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/ThingDef[@Name="ShardSentry" or @Name="BaseMCBuilding" or defName="Turret_RSCannon"]/placeWorkers[not(li="PlaceWorker_ShowTurretRadius")]</xpath>
 		<match Class="PatchOperationAdd">
@@ -14,17 +12,21 @@
 			</value>
 		</match>
 	</Operation>
-	<!-- The rotary gun's placeWorkers come from RSHeavyTurret, which it shares with the two beam turrets; child lists append
-	     to the parent's, so the child gets its own. -->
-	<Operation Class="PatchOperationConditional">
-		<xpath>Defs/ThingDef[defName="Turret_Rotarygun"][not(placeWorkers)][not(../ThingDef[@Name="RSHeavyTurret"]/placeWorkers/li="PlaceWorker_ShowTurretRadius")]</xpath>
-		<match Class="PatchOperationAdd">
-			<xpath>Defs/ThingDef[defName="Turret_Rotarygun"][not(placeWorkers)][not(../ThingDef[@Name="RSHeavyTurret"]/placeWorkers/li="PlaceWorker_ShowTurretRadius")]</xpath>
-			<value>
-				<placeWorkers>
+	<!-- RSHeavyTurret: rotary gun (Verb_Shoot) plus the incinerator and graser turrets (Verb_ShootBeam). The vanilla
+	     placeworker null-refs every frame on a gun with no Verb_Shoot / Verb_Spray; Harmony3StrictCompat
+	     (TurretRadiusAnyVerb) draws the first ranged verb's ring for those, so only with that mod active. -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Harmony 3 Strict Binding Compat (local)</li>
+		</mods>
+		<match Class="PatchOperationConditional">
+			<xpath>Defs/ThingDef[@Name="RSHeavyTurret"]/placeWorkers[not(li="PlaceWorker_ShowTurretRadius")]</xpath>
+			<match Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="RSHeavyTurret"]/placeWorkers[not(li="PlaceWorker_ShowTurretRadius")]</xpath>
+				<value>
 					<li>PlaceWorker_ShowTurretRadius</li>
-				</placeWorkers>
-			</value>
+				</value>
+			</match>
 		</match>
 	</Operation>
 </Patch>
