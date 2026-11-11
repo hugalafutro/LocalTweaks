@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 	<!-- Big Little Mod Patch (daria40k.biglittlemodpatch), LinkableGroup/1.7 defs loaded with Linkable Groups active:
-	     its LinkableGroupDef lists name abstract parents (Name="...", no def) and a VFE def removed in 1.6 as
+	     its LinkableGroupDef lists name abstract parents (Name="...", no def) as
 	     ThingDefs, so startup logs "Could not resolve cross-reference to Verse.ThingDef named ... (wanter=affected)".
 	     Linkable Groups already lists every concrete bed those parents stand for (Bed, DoubleBed, RoyalBed, Bed_Simple,
 	     Bed_StoneSlab, Bed_Ergonomic, Bed_AdvBed and their doubles), and TableSimpleProsthetic has no concrete child in
@@ -13,9 +13,9 @@
 			<li>Linkable Groups</li>
 		</mods>
 		<match Class="PatchOperationConditional">
-			<xpath>Defs/LinkableGroupDef[defName="BigLittleModPatch_Bed"]/affected/li[.="BasicBedBase" or .="VFE_ChiseledBedBase" or .="VFE_SimpleBedBase" or .="VFE_ErgonomicBedBase" or .="VFES_AdvancedBedBase"] | Defs/LinkableGroupDef[defName="BigLittleModPatch_Bed"]/facilities/li[.="Table_LightEndTable"] | Defs/LinkableGroupDef[defName="BigLittleModPatch_Bionic"]/affected/li[.="TableSimpleProsthetic"]</xpath>
+			<xpath>Defs/LinkableGroupDef[defName="BigLittleModPatch_Bed"]/affected/li[.="BasicBedBase" or .="VFE_ChiseledBedBase" or .="VFE_SimpleBedBase" or .="VFE_ErgonomicBedBase" or .="VFES_AdvancedBedBase"] | Defs/LinkableGroupDef[defName="BigLittleModPatch_Bionic"]/affected/li[.="TableSimpleProsthetic"]</xpath>
 			<match Class="PatchOperationRemove">
-				<xpath>Defs/LinkableGroupDef[defName="BigLittleModPatch_Bed"]/affected/li[.="BasicBedBase" or .="VFE_ChiseledBedBase" or .="VFE_SimpleBedBase" or .="VFE_ErgonomicBedBase" or .="VFES_AdvancedBedBase"] | Defs/LinkableGroupDef[defName="BigLittleModPatch_Bed"]/facilities/li[.="Table_LightEndTable"] | Defs/LinkableGroupDef[defName="BigLittleModPatch_Bionic"]/affected/li[.="TableSimpleProsthetic"]</xpath>
+				<xpath>Defs/LinkableGroupDef[defName="BigLittleModPatch_Bed"]/affected/li[.="BasicBedBase" or .="VFE_ChiseledBedBase" or .="VFE_SimpleBedBase" or .="VFE_ErgonomicBedBase" or .="VFES_AdvancedBedBase"] | Defs/LinkableGroupDef[defName="BigLittleModPatch_Bionic"]/affected/li[.="TableSimpleProsthetic"]</xpath>
 			</match>
 		</match>
 	</Operation>
