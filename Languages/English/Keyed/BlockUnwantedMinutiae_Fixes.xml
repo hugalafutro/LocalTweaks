@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Block Unwanted Minutiae's English keyed file sets LetterLabelMessageRecruitSuccess to "New recruit: {0}", but
+  vanilla builds the label as Translate() + ": " + name (InteractionWorker_RecruitAttempt) and Hospitality uses it
+  without an argument, so the {0} prints literally ("New recruit: {0}: Shamble"). Vanilla text again; keyed entries
+  from a later mod replace earlier ones (LoadedLanguage.LoadFromFile_Keyed uses SetOrAdd). Drop this file when
+  Block Unwanted Minutiae removes the placeholder.
+-->
+<LanguageData>
+  <LetterLabelMessageRecruitSuccess>New recruit</LetterLabelMessageRecruitSuccess>
+</LanguageData>
