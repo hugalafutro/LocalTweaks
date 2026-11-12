@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Helixien gas lamps and their electric counterparts share a replace tag, so either can be placed directly over
+	     the other (vanilla's blueprint-over check and Replace Stuff both use GenConstruct.HasMatchingReplacementTag).
+	     The wall lamps are wall attachments on the cell in front of the wall; both use Placeworker_AttachedToWall, so
+	     the new lamp lands on the old one's cell. Neither side has replaceTags of its own today; the conditionals add
+	     to an existing list if a later version brings one. -->
+	<Operation Class="PatchOperationSequence" MayRequire="VanillaExpanded.HelixienGas">
+		<operations>
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="WallLamp" or defName="VHGE_GasWallLamp"][not(replaceTags)]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="WallLamp" or defName="VHGE_GasWallLamp"][not(replaceTags)]</xpath>
+					<value><replaceTags /></value>
+				</match>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="WallLamp" or defName="VHGE_GasWallLamp"]/replaceTags</xpath>
+				<value><li>LocalTweaks_WallLamp</li></value>
+			</li>
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="StandingLamp" or defName="VHGE_GasLamp"][not(replaceTags)]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="StandingLamp" or defName="VHGE_GasLamp"][not(replaceTags)]</xpath>
+					<value><replaceTags /></value>
+				</match>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="StandingLamp" or defName="VHGE_GasLamp"]/replaceTags</xpath>
+				<value><li>LocalTweaks_StandingLamp</li></value>
+			</li>
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="SunLamp" or defName="VHGE_GasSunLamp"][not(replaceTags)]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="SunLamp" or defName="VHGE_GasSunLamp"][not(replaceTags)]</xpath>
+					<value><replaceTags /></value>
+				</match>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="SunLamp" or defName="VHGE_GasSunLamp"]/replaceTags</xpath>
+				<value><li>LocalTweaks_SunLamp</li></value>
+			</li>
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="FloodLight" or defName="VHGE_GasFloodlight"][not(replaceTags)]</xpath>
+				<match Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="FloodLight" or defName="VHGE_GasFloodlight"][not(replaceTags)]</xpath>
+					<value><replaceTags /></value>
+				</match>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="FloodLight" or defName="VHGE_GasFloodlight"]/replaceTags</xpath>
+				<value><li>LocalTweaks_FloodLight</li></value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>
