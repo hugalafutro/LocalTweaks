@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- [AV] Mechanoid Spots (Veltaris.MechStations) puts its sockets, discs and mech spot in the vanilla Biotech
+	     category. Better Architect Menu relabels that category "Genetics" and moves the vanilla chargers, band node
+	     and gestators to its own Ferny_Mechanoids category, but ships no patch for AV, so the mech buildings sat
+	     between the gene machines. Move them next to the vanilla mech buildings. Replace fails (red patch error) if
+	     AV ever changes these nodes. -->
+	<Operation Class="PatchOperationSequence" MayRequire="Veltaris.MechStations,ferny.BetterArchitect">
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="AV_MechStation_Base"]/designationCategory[.="Biotech"]</xpath>
+				<value><designationCategory>Ferny_Mechanoids</designationCategory></value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="AV_MechSpot"]/designationCategory[.="Biotech"]</xpath>
+				<value><designationCategory>Ferny_Mechanoids</designationCategory></value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

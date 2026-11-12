@@ -34,6 +34,7 @@
 - Flourish - Everyday Animations + Show Me Your Tools: children's floor drawing without Flourish's extra hands and body-lowering track.
 - Show Me Your Tools: no floating handheld spyglass while using a telescope (kept for skygazing).
 - Show Me Your Tools + Vanilla Helixien Gas Expanded: cooking at the gas stove shows the stirring spoon; the gas smithy and smelter get the welder and smelt rod.
+- [AV] Mechanoid Spots + Better Architect Menu: mech spot, mech discs and mech sockets sit in the Mechanoids tab with the vanilla chargers instead of Genetics.
 - Any scanner work giver missing it (Fortifications - Industrial radio): canBeDoneByMechs false as on the vanilla scanners, so mechs do not null-ref on their missing skills.
 - Rimsenal - Security Pack: range ring while placing the shard sentry, ULM cannon, barrage turret, cannon, rotary gun, incinerator and graser turrets (the beam turrets rely on Harmony3StrictCompat).
 - Hauler's Dream: batch crafting gets the same Flourish animations and Show Me Your Tools tools as a normal bill.
