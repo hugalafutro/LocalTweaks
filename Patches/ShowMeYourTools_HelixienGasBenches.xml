@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Show Me Your Tools (meathax.ShowMeYourTools) only draws a bench tool on the benches named in each
+	     JobToolDef's workbenchDefs, so a pawn cooking at Vanilla Helixien Gas Expanded's gas stove stood there
+	     empty-handed (no spoon stir). Its own Appliances Expanded compat maps chemfuel benches the same way: append
+	     each gas bench to the tool of the vanilla bench it stands in for. The gas refinery and crematorium get none,
+	     like their vanilla counterparts. -->
+	<Operation Class="PatchOperationSequence" MayRequire="meathax.ShowMeYourTools,VanillaExpanded.HelixienGas">
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/JobEffects.JobToolDef[defName="JE_Tool_Spoon"]/workbenchDefs[not(li="VHGE_GasPoweredStove")]</xpath>
+				<value><li>VHGE_GasPoweredStove</li></value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/JobEffects.JobToolDef[defName="JE_Tool_BenchWelder"]/workbenchDefs[not(li="VHGE_GasPoweredSmithy")]</xpath>
+				<value><li>VHGE_GasPoweredSmithy</li></value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/JobEffects.JobToolDef[defName="JE_Tool_SmeltRod"]/workbenchDefs[not(li="VHGE_GasPoweredSmelter")]</xpath>
+				<value><li>VHGE_GasPoweredSmelter</li></value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>
