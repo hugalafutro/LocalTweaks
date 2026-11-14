@@ -8,6 +8,7 @@
   </supportedVersions>
   <loadAfter>
     <li>vanillaquestsexpanded.ancients</li>
+    <li>sarg.alphaanimals</li>
     <li>daria40k.biglittlemodpatch</li>
     <li>cyanobot.plantgenpatch</li>
     <li>ferny.consistenttext</li>
@@ -32,6 +33,7 @@
 - Big Little Mod Patch + Linkable Groups: removes the abstract-parent and removed-def entries from its linkable groups that error at startup (the concrete beds are already covered).
 - Alpha Genes + Cherry Picker: removes the cherry-picked AG_DecreasedCommandRange gene from the random-mutation blacklist.
 - Flourish - Everyday Animations + Show Me Your Tools: children's floor drawing without Flourish's extra hands and body-lowering track.
+- Alpha Animals + Giddy-Up 2 - Continued: re-applies Alpha Animals' Giddy-Up mount data (it only looks for "Giddy-Up 2 Forked"), so meadow aves and its other mounts can be ridden.
 - Show Me Your Tools: no floating handheld spyglass while using a telescope (kept for skygazing).
 - Show Me Your Tools + Vanilla Helixien Gas Expanded: cooking at the gas stove shows the stirring spoon; the gas smithy and smelter get the welder and smelt rod.
 - [AV] Mechanoid Spots + Better Architect Menu: mech spot, mech discs and mech sockets sit in the Mechanoids tab with the vanilla chargers instead of Genetics.
