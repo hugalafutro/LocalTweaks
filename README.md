@@ -39,6 +39,7 @@ conditionals that retire themselves once that mod is fixed.
 | `Languages/English/Keyed/VPWE_GivesAbility.xml` | Vanilla Persona Weapons Expanded | The persona-weapon psycast stat line reads "Gives ability" instead of the raw key `VREA.GivesAbility` (its code uses a key that only ships with Vanilla Races Expanded - Archon) |
 | `Patches/VQEA_DeconstructibleTubes.xml` | Vanilla Quests Expanded - Ancients | Decorative pneumatic tubes in vaults can be deconstructed (launch port and termini left alone, they have code behind them) |
 | `Patches/UniversalBlueprints_RimBuilderEnglish.xml` | Universal Blueprints Alpha Pack / DMS Pack | Their one childhood backstory (`rimcreator`, "边缘建造师") ships in Chinese only; English title, short title and description. Both packs define the identical def, so one patch covers whichever is active |
+| `Patches/PositiveConnections_ThirdPersonLog.xml` | Positive Connections | Social log lines in third person with both names ("Gao told a story to Shamble.") instead of first person ("I told a story to Shamble." / "Gao told me a story."), for all seven first-person interactions. Personal preference |
 
 Load order: after VQE Ancients, Big Little Mod Patch, Cyanobot's Plant Gen Patches, Consistent Text, Flourish Everyday, Alpha Biomes, Vanilla Landmarks Expanded, Gulden Biome, Biomes! Caverns, Vanilla Furniture Expanded, Det's Boglegs, Hospitality: Casino and Block Unwanted Minutiae (declared in `About/About.xml`).
 

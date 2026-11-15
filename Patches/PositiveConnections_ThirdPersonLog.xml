@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Positive Connections (cem.PositiveConnections) writes its social log lines in first person, one version
+	     per side ("I told a story to X." / "X told me a story."). Vanilla and nearly every other mod name both
+	     pawns in third person, so in a list that mixes pawns (UI Rethemed "Recent interactions") an "I" line has
+	     no owner. Personal preference: third person for all seven first-person interactions, both sides.
+	     DIL_SkillShare is third person already. Thought descriptions stay first person, as in vanilla.
+	     Text only; old log entries re-render with the new wording. -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/InteractionDef[defName="DIL_GiveComfort"]/logRulesInitiator/rulesStrings/li</xpath>
+		<value><li>r_logentry->[INITIATOR_nameDef] comforted [RECIPIENT_nameDef], who was feeling down.</li></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/InteractionDef[defName="DIL_GiveComfort"]/logRulesRecipient/rulesStrings/li</xpath>
+		<value><li>r_logentry->[INITIATOR_nameDef] comforted [RECIPIENT_nameDef], who was feeling down.</li></value>
+		<success>Always</success>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/InteractionDef[defName="DIL_Mediation"]/logRulesInitiator/rulesStrings/li</xpath>
+		<value><li>r_logentry->[INITIATOR_nameDef] mediated a conflict involving [RECIPIENT_nameDef].</li></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/InteractionDef[defName="DIL_Mediation"]/logRulesRecipient/rulesStrings/li</xpath>
+		<value><li>r_logentry->[INITIATOR_nameDef] mediated a conflict involving [RECIPIENT_nameDef].</li></value>
+		<success>Always</success>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/InteractionDef[defName="DIL_Compliment"]/logRulesInitiator/rulesStrings/li</xpath>
+		<value><li>r_logentry->[INITIATOR_nameDef] complimented [RECIPIENT_nameDef].</li></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/InteractionDef[defName="DIL_Compliment"]/logRulesRecipient/rulesStrings/li</xpath>
+		<value><li>r_logentry->[INITIATOR_nameDef] complimented [RECIPIENT_nameDef], who felt validated.</li></value>
+		<success>Always</success>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/InteractionDef[defName="DIL_DiscussIdeoligion"]/logRulesInitiator/rulesStrings/li</xpath>
+		<value><li>r_logentry->[INITIATOR_nameDef] had a thoughtful discussion about their ideoligion with [RECIPIENT_nameDef].</li></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/InteractionDef[defName="DIL_DiscussIdeoligion"]/logRulesRecipient/rulesStrings/li</xpath>
+		<value><li>r_logentry->[INITIATOR_nameDef] and [RECIPIENT_nameDef] had a deep conversation about their ideoligion.</li></value>
+		<success>Always</success>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/InteractionDef[defName="DIL_GiveGift"]/logRulesInitiator/rulesStrings/li</xpath>
+		<value><li>r_logentry->[INITIATOR_nameDef] gave a small gift to [RECIPIENT_nameDef].</li></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/InteractionDef[defName="DIL_GiveGift"]/logRulesRecipient/rulesStrings/li</xpath>
+		<value><li>r_logentry->[INITIATOR_nameDef] gave [RECIPIENT_nameDef] a small gift.</li></value>
+		<success>Always</success>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/InteractionDef[defName="DIL_SharedPassion"]/logRulesInitiator/rulesStrings/li</xpath>
+		<value><li>r_logentry->[INITIATOR_nameDef] discussed a shared passion with [RECIPIENT_nameDef].</li></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/InteractionDef[defName="DIL_SharedPassion"]/logRulesRecipient/rulesStrings/li</xpath>
+		<value><li>r_logentry->[INITIATOR_nameDef] and [RECIPIENT_nameDef] talked about a shared passion.</li></value>
+		<success>Always</success>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/InteractionDef[defName="DIL_Storytelling"]/logRulesInitiator/rulesStrings/li</xpath>
+		<value><li>r_logentry->[INITIATOR_nameDef] told a story to [RECIPIENT_nameDef].</li></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/InteractionDef[defName="DIL_Storytelling"]/logRulesRecipient/rulesStrings/li</xpath>
+		<value><li>r_logentry->[INITIATOR_nameDef] told [RECIPIENT_nameDef] a story.</li></value>
+		<success>Always</success>
+	</Operation>
+</Patch>
