@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Buzzers no longer come with the Biotech acid spray gene (and so not its ability). Only the xenotype's gene list
+	     changes: the gene itself stays in the game, and pawns that already exist keep it. -->
+	<Operation Class="PatchOperationRemove" MayRequire="det.buzzers">
+		<xpath>Defs/XenotypeDef[defName="DV_Buzzer"]/genes/li[text()="AcidSpray"]</xpath>
+	</Operation>
+</Patch>
