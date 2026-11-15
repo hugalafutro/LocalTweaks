@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- MSS Tweaks and Fun's Vanilla Events Expanded compat (Compatibility/vanillaexpanded.vee) still names VEE's
+	     purple-event game conditions as GlobalWarming / IceAge / LongNight / PsychicBloom. VEE renamed them in 1.6
+	     (its own DefMigrationDefs: VEE_Scorch, VEE_Whiteout, VEE_LongNight, VEE_PsychicBloom), so MSS's Nuclear Fallout
+	     lost four of its exclusive conditions and its "Global Warming Genes" mutator had no condition
+	     ("Could not resolve cross-reference to Verse.GameConditionDef named GlobalWarming", 5 errors per load).
+	     Each xpath names the old text, so a replace stops matching once MSS updates the name. -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GameConditionDef[defName="MSS_NuclearFallout"]/exclusiveConditions/li[text()="GlobalWarming"]</xpath>
+		<value><li>VEE_Scorch</li></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GameConditionDef[defName="MSS_NuclearFallout"]/exclusiveConditions/li[text()="IceAge"]</xpath>
+		<value><li>VEE_Whiteout</li></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GameConditionDef[defName="MSS_NuclearFallout"]/exclusiveConditions/li[text()="LongNight"]</xpath>
+		<value><li>VEE_LongNight</li></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GameConditionDef[defName="MSS_NuclearFallout"]/exclusiveConditions/li[text()="PsychicBloom"]</xpath>
+		<value><li>VEE_PsychicBloom</li></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/MSSFP.Genes.GeneMutatorDef[defName="MSS_GlobalWarming"]/conditionActive[text()="GlobalWarming"]</xpath>
+		<value><conditionActive>VEE_Scorch</conditionActive></value>
+		<success>Always</success>
+	</Operation>
+</Patch>
