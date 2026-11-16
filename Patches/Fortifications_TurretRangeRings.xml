@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Fortifications - Industrial and its Frontier and Citadel add-ons leave PlaceWorker_ShowTurretRadius off these
+	     turrets, so no range ring while placing them. All are Verb_Shoot guns. Left alone on purpose: the mortar, hex
+	     mortar, Prince, Empero and Katyusha (range 100 to 500): GenDraw.DrawRadiusRing cannot draw past
+	     GenRadial.MaxRadialPatternRadius (about 79.8 tiles, 20000 cells) and logs an error instead.
+	     Most of these defs have no placeWorkers node of their own (it comes from FT_BaseCannonBuilding), so one is
+	     added; the list merges with the inherited one. Retires itself per def once the mod adds a node. -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[(defName="FT_Maxim4M" or defName="FT_AutoCannon" or defName="FT_RecoillessGun" or defName="FT_TurretAA" or defName="FT_TurretQuadAA" or defName="FT_TurretAT" or defName="FT_HeavyMachinegun" or defName="FT_InfantryAutoCannon") and not(placeWorkers)]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[(defName="FT_Maxim4M" or defName="FT_AutoCannon" or defName="FT_RecoillessGun" or defName="FT_TurretAA" or defName="FT_TurretQuadAA" or defName="FT_TurretAT" or defName="FT_HeavyMachinegun" or defName="FT_InfantryAutoCannon") and not(placeWorkers)]</xpath>
+			<value>
+				<placeWorkers>
+					<li>PlaceWorker_ShowTurretRadius</li>
+				</placeWorkers>
+			</value>
+		</match>
+	</Operation>
+	<!-- The GPMG and the Citadel twin heavy flak (range 62) list their own placeworkers. -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="FT_GPMG" or defName="FTC_TurretTwinHeavyFlak"]/placeWorkers[not(li="PlaceWorker_ShowTurretRadius")]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="FT_GPMG" or defName="FTC_TurretTwinHeavyFlak"]/placeWorkers[not(li="PlaceWorker_ShowTurretRadius")]</xpath>
+			<value>
+				<li>PlaceWorker_ShowTurretRadius</li>
+			</value>
+		</match>
+	</Operation>
+</Patch>
