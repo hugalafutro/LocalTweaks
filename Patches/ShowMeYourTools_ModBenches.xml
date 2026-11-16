@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Show Me Your Tools (meathax.ShowMeYourTools) only draws a bench tool on the benches named in each
+	     JobToolDef's workbenchDefs, so pawns working at benches from mods it has no compat for stood there
+	     empty-handed. Each bench is appended to the tool of the vanilla bench it stands in for. workbenchDefs is a
+	     list of plain names, so entries for a mod that is not loaded are inert.
+
+	     Metalworking chisel (machining table / fabrication bench):
+	       Rimsenal faction benches (Greydale, Yeonhwa, Jotun, Tisiphone, Federation, Feral) - assemble weapons and armour
+	       Alpha Implants animal prosthetics tables - assemble prosthetics and bionics
+	       Fortifications - Industrial lathe - machines barrels and components
+	     Spoon (stove): Rimsenal Spacer nutrient processor - cooks simple meals only
+	     Drug flask (drug lab): Fortifications - Industrial chemistry table - synthesizes neutroamine
+	     Chisel and mallet (stonecutter's table): Fortifications - Industrial concrete mixer - crushes stone
+
+	     The Rimsenal Spacer survival station mixes cooking, butchering and mech disassembly at one bench and a tool
+	     matches per bench, not per recipe, so it stays without one. -->
+	<Operation Class="PatchOperationSequence" MayRequire="meathax.ShowMeYourTools">
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/JobEffects.JobToolDef[defName="JE_Tool_MetalChisel"]/workbenchDefs[not(li="GDTable")]</xpath>
+				<value>
+					<li>GDTable</li>
+					<li>YPTable</li>
+					<li>JITable</li>
+					<li>TETable</li>
+					<li>FedTable</li>
+					<li>FeralTable</li>
+					<li>AI_AnimalProstheticsTable</li>
+					<li>AI_AdvancedAnimalProstheticsTable</li>
+					<li>FT_TableLathe</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/JobEffects.JobToolDef[defName="JE_Tool_Spoon"]/workbenchDefs[not(li="NutrientProcessor")]</xpath>
+				<value><li>NutrientProcessor</li></value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/JobEffects.JobToolDef[defName="JE_Tool_DrugSpoon"]/workbenchDefs[not(li="FT_TableChemistry")]</xpath>
+				<value><li>FT_TableChemistry</li></value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/JobEffects.JobToolDef[defName="JE_Tool_BenchChisel"]/workbenchDefs[not(li="FT_TableConcreteMixer")]</xpath>
+				<value><li>FT_TableConcreteMixer</li></value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>
