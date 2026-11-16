@@ -17,11 +17,12 @@
 			</value>
 		</match>
 	</Operation>
-	<!-- The GPMG and the Citadel twin heavy flak (range 62) list their own placeworkers. -->
+	<!-- These list their own placeworkers: the GPMG, the Citadel twin heavy flak (range 62) and the Citadel wall bunkers
+	     (flamethrower, machinegun, AT gun), whose placeWorkers Inherit="false" drops the ring their base def has. -->
 	<Operation Class="PatchOperationConditional">
-		<xpath>Defs/ThingDef[defName="FT_GPMG" or defName="FTC_TurretTwinHeavyFlak"]/placeWorkers[not(li="PlaceWorker_ShowTurretRadius")]</xpath>
+		<xpath>Defs/ThingDef[defName="FT_GPMG" or defName="FTC_TurretTwinHeavyFlak" or defName="FTC_Wall_Flame" or defName="FTC_Wall_MG" or defName="FTC_Wall_AT"]/placeWorkers[not(li="PlaceWorker_ShowTurretRadius")]</xpath>
 		<match Class="PatchOperationAdd">
-			<xpath>Defs/ThingDef[defName="FT_GPMG" or defName="FTC_TurretTwinHeavyFlak"]/placeWorkers[not(li="PlaceWorker_ShowTurretRadius")]</xpath>
+			<xpath>Defs/ThingDef[defName="FT_GPMG" or defName="FTC_TurretTwinHeavyFlak" or defName="FTC_Wall_Flame" or defName="FTC_Wall_MG" or defName="FTC_Wall_AT"]/placeWorkers[not(li="PlaceWorker_ShowTurretRadius")]</xpath>
 			<value>
 				<li>PlaceWorker_ShowTurretRadius</li>
 			</value>

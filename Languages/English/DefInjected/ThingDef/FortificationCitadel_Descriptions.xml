@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<!-- Fortification Industrial - Citadel: five descriptions have a stray "n" before the first line break ("box. n\n As")
+	     and a space after each break. Same wording with both removed. -->
+	<FTC_AntiTank_Turret.description>a fixed tank turret mounting on a half-buried concrete box.\n\nAs a bunker fortification, the gunner could operate the weapon internally until it was destroyed.\n\nThis is a permanent structure, site wisely.</FTC_AntiTank_Turret.description>
+	<FTC_Batterey_Turret.description>A heavy navy gun mounted on a large concrete bunker that can effectively destroy enemies within range.\n\nAs a permanent fortification, the gunner can safely man the gun inside.\n\nThis is a permanent structure, site wisely.</FTC_Batterey_Turret.description>
+	<FTC_Wall_Howitzer.description>a fixed artillery turret mounting on a concrete box.\n\nAs a turret fortification, the gunner could operate the weapon internally until it was destroyed, but could not receive direct orders.\n\nThis is a permanent structure, site wisely.</FTC_Wall_Howitzer.description>
+	<FTC_TwinMG_Turret.description>a fixed machine gun turret mounting on a half-buried concrete box.\n\nAs a turret fortification, the gunner could operate the weapon internally until it was destroyed, but could not receive direct orders.\n\nThis is a permanent structure, site wisely.</FTC_TwinMG_Turret.description>
+	<FTC_Autocannon_Turret.description>a fixed autocannon gun turret mounting on a half-buried concrete box.\n\nAs a turret fortification, the gunner could operate the weapon internally until it was destroyed, but could not receive direct orders.\n\nThis is a permanent structure, site wisely.</FTC_Autocannon_Turret.description>
+</LanguageData>
