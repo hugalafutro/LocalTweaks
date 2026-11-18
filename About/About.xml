@@ -57,5 +57,6 @@
 - Vanilla Persona Weapons Expanded: the persona-weapon psycast stat line reads "Gives ability" instead of the raw key VREA.GivesAbility (key only ships with VRE Archon).
 - Fortifications - Industrial + VFE Security: multi-barrel mortar launcher, field howitzer and field cannon keep their gizmo bar (Uninstall included) once player-owned; removes the world artillery comp that null-refs on them.
 - Better ground-penetrating scanner + Biomes! Caverns: the scanner can be placed under a roof; removes the Biomes roof check that the setting cannot.
-- Positive Connections: social log lines in third person with both names instead of first person.</description>
+- Positive Connections: social log lines in third person with both names instead of first person.
+- ED-Embrasures (Continued) + Better Architect Menu: the ED embrasure sits in the Barricades category next to the [HRK] embrasures.</description>
 </ModMetaData>
