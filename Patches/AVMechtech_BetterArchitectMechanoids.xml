@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- [AV] Mechtech puts its fuelled band nodes (neutroamine, chemfuel, and helixien with Vanilla Helixien Gas
+	     Expanded) in the vanilla Biotech category. Better Architect Menu relabels that category "Genetics" and moves
+	     the vanilla band node to its own Ferny_Mechanoids category, but ships no patch for AV, so these three sat
+	     between the gene machines. Move them next to the vanilla band node. FindMod, not a two-id MayRequire: that
+	     still ran with one of the two mods gone. Replace fails (red patch error) if AV ever changes these nodes. -->
+	<Operation Class="PatchOperationFindMod" MayRequire="ferny.BetterArchitect">
+		<mods>
+			<li>[AV] Mechtech</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="AV_BandNode_Neutroamine" or defName="AV_BandNode_Chemfuel" or defName="AV_BandNode_Helixien"]/designationCategory[.="Biotech"]</xpath>
+			<value><designationCategory>Ferny_Mechanoids</designationCategory></value>
+		</match>
+	</Operation>
+</Patch>
