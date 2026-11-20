@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Battery Charge Display replaces the graphicData of the vanilla battery and the two VFE Power batteries with one
+	     that carries shadowData, but leaves their staticSunShadowHeight in place. A def may have only one of the two, so
+	     the game logs "Config error in Battery: graphicData defines a shadowInfo but staticSunShadowHeight > 0" for each.
+	     Drop the static shadow and keep the mod's own. Matches only while both are present, so it retires itself once
+	     the mod removes the field. -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="Battery" or defName="VFE_LargeBattery" or defName="VFE_SmallBattery"][graphicData/shadowData]/staticSunShadowHeight</xpath>
+		<match Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[defName="Battery" or defName="VFE_LargeBattery" or defName="VFE_SmallBattery"][graphicData/shadowData]/staticSunShadowHeight</xpath>
+		</match>
+	</Operation>
+</Patch>

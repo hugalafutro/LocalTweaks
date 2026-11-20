@@ -24,6 +24,7 @@
     <li>trigger.universalblueprints.alphapack</li>
     <li>trigger.universalblueprints.dms</li>
     <li>mlie.blockunwantedminutiae</li>
+    <li>shamlan.batterychargedisplay</li>
   </loadAfter>
   <url>https://github.com/hugalafutro/LocalTweaks</url>
   <description>Personal XML tweaks. Same list as the README on GitHub.
@@ -58,5 +59,6 @@
 - Vanilla Persona Weapons Expanded: the persona-weapon psycast stat line reads "Gives ability" instead of the raw key VREA.GivesAbility (key only ships with VRE Archon).
 - Fortifications - Industrial + VFE Security: multi-barrel mortar launcher, field howitzer and field cannon keep their gizmo bar (Uninstall included) once player-owned; removes the world artillery comp that null-refs on them.
 - Better ground-penetrating scanner + Biomes! Caverns: the scanner can be placed under a roof; removes the Biomes roof check that the setting cannot.
-- Positive Connections: social log lines in third person with both names instead of first person.</description>
+- Positive Connections: social log lines in third person with both names instead of first person.
+- Battery Charge Display: removes the leftover static sun shadow from the three batteries it restyles (config error on load).</description>
 </ModMetaData>
