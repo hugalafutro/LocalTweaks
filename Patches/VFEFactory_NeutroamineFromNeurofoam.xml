@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Personal tweak: VFE Factory's neutroamine synthesizer takes 3 chemfuel and 20 raw meat. [AV] Mechtech's
+	     neurofoam is a neutroamine-flavoured organic that only its own band node uses, so it piles up. Give the
+	     synthesizer a second process that takes 10 neurofoam in place of the 20 meat (same chemfuel, time and
+	     output; neurofoam is three times as nutritious as meat). A separate process, not neurofoam added to the MeatRaw category: that would also make it
+	     meat for cooks, stockpile filters and every other meat recipe. Like the original, it draws chemfuel from
+	     the pipe net when Vanilla Chemfuel Expanded is loaded. Pick it in the machine's process list. -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Furniture Expanded - Factory</li>
+		</mods>
+		<match Class="PatchOperationFindMod">
+			<mods>
+				<li>[AV] Mechtech</li>
+			</mods>
+			<match Class="PatchOperationSequence">
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs</xpath>
+						<value>
+							<PipeSystem.ProcessDef>
+								<defName>LT_SynthesizeNeutroamineFromNeurofoam</defName>
+								<label>Synthesize neutroamine from neurofoam</label>
+								<labelOverride>Synthesize neutroamine from neurofoam</labelOverride>
+								<description>Synthesize neutroamine from chemfuel and neurofoam.</description>
+								<priorityInBillList>1</priorityInBillList>
+								<spawnOnInteractionCell>true</spawnOnInteractionCell>
+								<autoGrabFromHoppers>true</autoGrabFromHoppers>
+								<autoInputSlots>
+									<li>(-1,0,2)</li>
+									<li>(1,0,2)</li>
+								</autoInputSlots>
+								<ticks>4800</ticks>
+								<ingredients>
+									<li>
+										<thing>Chemfuel</thing>
+										<countNeeded>3</countNeeded>
+									</li>
+									<li>
+										<thing>AV_Neurofoam</thing>
+										<countNeeded>10</countNeeded>
+									</li>
+								</ingredients>
+								<results>
+									<li>
+										<thing>Neutroamine</thing>
+										<count>5</count>
+									</li>
+								</results>
+								<isFactoryProcess>true</isFactoryProcess>
+								<autoExtract>true</autoExtract>
+								<onlyGrabAndOutputToFactoryHoppers>true</onlyGrabAndOutputToFactoryHoppers>
+								<sustainerWhenWorking>true</sustainerWhenWorking>
+								<sustainerDef>VFEFactory_AutomatedDrugsSustainer</sustainerDef>
+								<effecterWhenWorking>true</effecterWhenWorking>
+								<effecterDef>VFEFactory_Cook</effecterDef>
+							</PipeSystem.ProcessDef>
+						</value>
+					</li>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[defName="VFEFactory_NeutroamineSynthesizer"]/comps/li[@Class="PipeSystem.CompProperties_AdvancedResourceProcessor"]/processes</xpath>
+						<value>
+							<li>LT_SynthesizeNeutroamineFromNeurofoam</li>
+						</value>
+					</li>
+					<li Class="PatchOperationFindMod">
+						<mods>
+							<li>Vanilla Chemfuel Expanded</li>
+						</mods>
+						<match Class="PatchOperationAdd">
+							<xpath>Defs/PipeSystem.ProcessDef[defName="LT_SynthesizeNeutroamineFromNeurofoam"]</xpath>
+							<value>
+								<considerBuildingCompResource>true</considerBuildingCompResource>
+							</value>
+						</match>
+					</li>
+				</operations>
+			</match>
+		</match>
+	</Operation>
+</Patch>

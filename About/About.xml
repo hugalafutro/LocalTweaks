@@ -14,6 +14,7 @@
     <li>ferny.consistenttext</li>
     <li>bambaryla.allbambaturrets</li>
     <li>vanillaexpanded.vfefactory</li>
+    <li>veltaris.mechtech</li>
     <li>sarg.alphabiomes</li>
     <li>vanillaexpanded.vexploratione</li>
     <li>pphhyy.guldennew</li>
@@ -64,5 +65,6 @@
 - Positive Connections: social log lines in third person with both names instead of first person.
 - Battery Charge Display: removes the leftover static sun shadow from the three batteries it restyles (config error on load).
 - Turrets For All + Better Architect Menu: its turrets and artillery sit under Fight / Weapons with the vanilla turrets, not under Other.
-- VFE Factory + Better Architect Menu: the neutroamine synthesizer stays under Automate / Factory.</description>
+- VFE Factory + Better Architect Menu: the neutroamine synthesizer stays under Automate / Factory.
+- VFE Factory + [AV] Mechtech (personal tweak): the neutroamine synthesizer can also run on neurofoam instead of raw meat (second process in its list).</description>
 </ModMetaData>
