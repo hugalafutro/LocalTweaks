@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Better Architect Menu's Alpha Biomes patch moves VFE Factory's neutroamine synthesizer to Ferny_Production
+	     ("Produce" under "Make"), away from the other fifteen factory machines in VFEFactory_Factories ("Factory"
+	     under "Automate"). That patch runs after this mod (Better Architect loads later), so setting the category
+	     back here would be overwritten. Instead the synthesizer's own designationCategory node moves to an abstract
+	     parent: Better Architect's replace then finds no node (it is success=Always, so silent) and the def
+	     inherits the factory category. Applied only while the def's parent is BuildingBase, the one the new
+	     abstract def stands in for. -->
+	<Operation Class="PatchOperationFindMod" MayRequire="ferny.BetterArchitect">
+		<mods>
+			<li>Vanilla Furniture Expanded - Factory</li>
+		</mods>
+		<match Class="PatchOperationConditional">
+			<xpath>Defs/ThingDef[defName="VFEFactory_NeutroamineSynthesizer"][@ParentName="BuildingBase"]/designationCategory[.="VFEFactory_Factories"]</xpath>
+			<match Class="PatchOperationSequence">
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>Defs</xpath>
+						<value>
+							<ThingDef Name="LT_VFEFactoryMachineBase" ParentName="BuildingBase" Abstract="True">
+								<designationCategory>VFEFactory_Factories</designationCategory>
+							</ThingDef>
+						</value>
+					</li>
+					<li Class="PatchOperationRemove">
+						<xpath>Defs/ThingDef[defName="VFEFactory_NeutroamineSynthesizer"]/designationCategory</xpath>
+					</li>
+					<li Class="PatchOperationAttributeSet">
+						<xpath>Defs/ThingDef[defName="VFEFactory_NeutroamineSynthesizer"]</xpath>
+						<attribute>ParentName</attribute>
+						<value>LT_VFEFactoryMachineBase</value>
+					</li>
+				</operations>
+			</match>
+		</match>
+	</Operation>
+</Patch>

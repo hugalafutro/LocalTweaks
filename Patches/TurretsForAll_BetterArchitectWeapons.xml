@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Turrets For All Post-Medieval Tech Levels puts every turret in the vanilla Security category: its own
+	     ABT_TurretBase, and the three artillery pieces, which override the category of the vanilla artillery base.
+	     Better Architect Menu moves the vanilla turrets and the vanilla artillery base to Ferny_Weapons ("Weapons"
+	     under "Fight") but ships no patch for this mod, so its turrets were left in the "Other" tab. Move them
+	     next to the rest. Matches only while they are in Security, so it retires itself if either mod fixes it. -->
+	<Operation Class="PatchOperationFindMod" MayRequire="ferny.BetterArchitect">
+		<mods>
+			<li>Turrets For All Post-Medieval Tech Levels</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[@Name="ABT_TurretBase" or starts-with(defName,"ABT_Turret_")]/designationCategory[.="Security"]</xpath>
+			<value><designationCategory>Ferny_Weapons</designationCategory></value>
+		</match>
+	</Operation>
+</Patch>
