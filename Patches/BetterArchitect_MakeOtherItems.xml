@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Better Architect Menu splits the vanilla Production category ("Make") into tabs and moves buildings into
+	     them with one patch folder per mod. These four mods have no folder, so their buildings stayed in vanilla
+	     Production and showed up under "Make / Other". Each goes to the tab that matches what it does. Every
+	     operation matches only while the def still sits in Production (success=Always keeps a missing mod or a
+	     fixed def silent), so each line retires itself if either side sorts it out. -->
+
+	<!-- Sparkling Worlds: the matterweaver turns materials into better ones (synthread, hyperweave, plasteel) -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="TableWeaverSW"]/designationCategory[.="Production"]</xpath>
+		<value><designationCategory>Ferny_ProcessingProduction</designationCategory></value>
+	</Operation>
+	<!-- Sparkling Worlds: the mechanite assembly is an ordinary crafting bench (luciferium, mechanites) -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="MechaniteAssemblySW"]/designationCategory[.="Production"]</xpath>
+		<value><designationCategory>Ferny_Production</designationCategory></value>
+	</Operation>
+	<!-- [AV] Mechtech: the cultivation pod makes neurofoam, hemogen paste and neutroamine by itself, mostly for the
+	     band nodes, which AVMechtech_BetterArchitectMechanoids.xml already put under "Automate / Mechanoids" -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="AV_CultivationPod"]/designationCategory[.="Production"]</xpath>
+		<value><designationCategory>Ferny_Mechanoids</designationCategory></value>
+	</Operation>
+	<!-- More Phytokin Xenotypes: the archean planter is a plant grower -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="MPX_SourceSoilPlanter"]/designationCategory[.="Production"]</xpath>
+		<value><designationCategory>Ferny_Farming</designationCategory></value>
+	</Operation>
+	<!-- MSS Flavour Pack: the Pondering Orb speeds up research and links to the multi-analyzer -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="MSSFP_AICore"]/designationCategory[.="Production"]</xpath>
+		<value><designationCategory>Ferny_ResearchProduction</designationCategory></value>
+	</Operation>
+	<!-- MSS Flavour Pack: the sun tower is a map-wide grow light -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="MSSFP_SunTower"]/designationCategory[.="Production"]</xpath>
+		<value><designationCategory>Ferny_Farming</designationCategory></value>
+	</Operation>
+	<!-- MSS Flavour Pack: the vending machine sells tea and snacks for silver -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="MSSFP_Vending_Machine"]/designationCategory[.="Production"]</xpath>
+		<value><designationCategory>Ferny_Kitchen</designationCategory></value>
+	</Operation>
+</Patch>
