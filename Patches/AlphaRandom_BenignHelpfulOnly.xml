@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Alpha Random's benign archotech fate manipulator rolls one incident uniformly from its whiteList plus
+	     every IncidentDef in the Misc and GiveQuest categories, minus a vanilla/DLC/VEE blacklist. Mods file
+	     threats and weather under Misc (Leo - Events: ~70, Alpha Animals: clutch mothers, behemoths...), so
+	     most rolls were bad or useless. Its incident picker (CompTargetEffect_TriggerIncident.ChooseRandomIncident)
+	     uses only whiteList when incidentTypes is empty, so the categories go and whiteList becomes a hand-picked
+	     list of helpful incidents from the active mods (reviewed 2026-11-21). Opt-in quests count as helpful.
+	     New mods add nothing to this pool; add their good incidents here. -->
+	<Operation Class="PatchOperationFindMod">
+		<mods><li>Alpha Random</li></mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="ARandom_FateManipulator_Benign"]/comps/li[@Class="AlphaRandom.CompProperties_TargetEffect_TriggerIncident"]/incidentTypes</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="ARandom_FateManipulator_Benign"]/comps/li[@Class="AlphaRandom.CompProperties_TargetEffect_TriggerIncident"]/blacklist</xpath>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="ARandom_FateManipulator_Benign"]/comps/li[@Class="AlphaRandom.CompProperties_TargetEffect_TriggerIncident"]/whiteList</xpath>
+					<value>
+						<whiteList>
+						<!-- Core -->
+						<li>ShipChunkDrop</li>	<!-- ship chunk drop -->
+						<li>OrbitalTraderArrival</li>	<!-- orbital trader arrival -->
+						<li>TraderCaravanArrival</li>	<!-- trader caravan arrival -->
+						<li>VisitorGroup</li>	<!-- visitor group -->
+						<li>TravelerGroup</li>	<!-- traveler group -->
+						<li>RaidFriendly</li>	<!-- friendly raid -->
+						<li>ResourcePodCrash</li>	<!-- resource pod crash -->
+						<li>PsychicSoothe</li>	<!-- psychic soothe -->
+						<li>SelfTame</li>	<!-- self-tame -->
+						<li>AmbrosiaSprout</li>	<!-- ambrosia sprout -->
+						<li>FarmAnimalsWanderIn</li>	<!-- farm animals wander in -->
+						<li>WandererJoin</li>	<!-- wanderer join -->
+						<li>RefugeePodCrash</li>	<!-- transport pod crash -->
+						<li>MeteoriteImpact</li>	<!-- meteorite impact -->
+						<li>WildManWandersIn</li>	<!-- wild man wanders in -->
+						<li>Aurora</li>	<!-- aurora -->
+						<li>GiveQuest_Random</li>	<!-- quest -->
+						<!-- ludeon.rimworld.royalty -->
+						<li MayRequire="ludeon.rimworld.royalty">AnimaTreeSpawn</li>	<!-- anima tree -->
+						<!-- ludeon.rimworld.ideology -->
+						<li MayRequire="ludeon.rimworld.ideology">GauranlenPodSpawn</li>	<!-- Gauranlen pod sprout -->
+						<li MayRequire="ludeon.rimworld.ideology">GiveQuest_WorkSite</li>	<!-- work site -->
+						<!-- ludeon.rimworld.biotech -->
+						<li MayRequire="ludeon.rimworld.biotech">PoluxTreeSpawn</li>	<!-- polux tree -->
+						<li MayRequire="ludeon.rimworld.biotech">RefugeePodCrash_Baby</li>	<!-- transport pod crash -->
+						<!-- ludeon.rimworld.odyssey -->
+						<li MayRequire="ludeon.rimworld.odyssey">BioluminescentSpores</li>	<!-- bioluminescent spores -->
+						<li MayRequire="ludeon.rimworld.odyssey">BoomshroomSprout</li>	<!-- boomshroom sprout -->
+						<!-- Erin Eccentric -->
+						<li MayRequire="erin.storyteller">EE_SelfTameCustom</li>	<!-- self-tame -->
+						<!-- Go Explore! -->
+						<li MayRequire="albion.goexplore">LostCityLGE</li>	<!-- lost city -->
+						<li MayRequire="albion.goexplore">AmbrosiaAnimalsLGE</li>	<!-- ambrosia-addicted animals -->
+						<li MayRequire="albion.goexplore">PrisonCampLGE</li>	<!-- prison camp -->
+						<li MayRequire="albion.goexplore">QuestResearchRequestSW</li>	<!-- research request opportunity -->
+						<li MayRequire="albion.goexplore">InterceptedMessageLGE</li>	<!-- intercepted message -->
+						<!-- Leo - Events -->
+						<li MayRequire="leo.eventsexpanded">LE_GauranlenBloom</li>	<!-- gauranlen bloom -->
+						<li MayRequire="leo.eventsexpanded">LE_VegetativeSpurt</li>	<!-- vegetative spurt -->
+						<li MayRequire="leo.eventsexpanded">LE_PsychicCalm</li>	<!-- psychic calm -->
+						<li MayRequire="leo.eventsexpanded">LE_AnimaBloom</li>	<!-- anima bloom -->
+						<li MayRequire="leo.eventsexpanded">LE_BlackMarket</li>	<!-- black market -->
+						<li MayRequire="leo.eventsexpanded">LE_Gift</li>	<!-- gift -->
+						<li MayRequire="leo.eventsexpanded">LE_MassInspiration</li>	<!-- mass inspiration -->
+						<li MayRequire="leo.eventsexpanded">LE_NutrientRain</li>	<!-- nutrient rain -->
+						<li MayRequire="leo.eventsexpanded">LE_PsychicLink</li>	<!-- psychic link -->
+						<li MayRequire="leo.eventsexpanded">LE_ResearchBreakthrough</li>	<!-- research breakthrough -->
+						<li MayRequire="leo.eventsexpanded">LE_SilverShower</li>	<!-- silver shower -->
+						<li MayRequire="leo.eventsexpanded">LE_SuddenEpiphany</li>	<!-- sudden epiphany -->
+						<li MayRequire="leo.eventsexpanded">LE_AtmosphericExcitant</li>	<!-- atmospheric excitant -->
+						<li MayRequire="leo.eventsexpanded">LE_GravityLow</li>	<!-- low gravity -->
+						<li MayRequire="leo.eventsexpanded">LE_NutrientSurge</li>	<!-- nutrient surge -->
+						<li MayRequire="leo.eventsexpanded">LE_DielectricResonance</li>	<!-- dielectric resonance -->
+						<li MayRequire="leo.eventsexpanded">LE_ArtisticRenaissance</li>	<!-- artistic renaissance -->
+						<li MayRequire="leo.eventsexpanded">LE_FavorableReputation</li>	<!-- favorable reputation -->
+						<li MayRequire="leo.eventsexpanded">LE_MagneticMiracle</li>	<!-- magnetic miracle -->
+						<li MayRequire="leo.eventsexpanded">LE_UnexpectedMineralSeams</li>	<!-- unexpected mineral seams -->
+						<!-- Mo'Events (Continued) -->
+						<li MayRequire="mlie.moevents">MO_SurvivalPod</li>	<!-- survival pod -->
+						<li MayRequire="mlie.moevents">MO_Thanksgiving</li>	<!-- thanksgiving -->
+						<!-- Sparkling Worlds - Full Mod -->
+						<li MayRequire="albion.sparklingworlds.full">ShipCrashSW</li>	<!-- ship crash -->
+						<li MayRequire="albion.sparklingworlds.full">ThrumboSightingSW</li>	<!-- thrumbo sighting -->
+						<li MayRequire="albion.sparklingworlds.full">QuestDoctorRequestSW</li>	<!-- doctor request opportunity -->
+						<li MayRequire="albion.sparklingworlds.full">TradeFairSW</li>	<!-- trade fair -->
+						<li MayRequire="albion.sparklingworlds.full">HuntingLodgeOppSW</li>	<!-- hunting lodge opportunity -->
+						<li MayRequire="albion.sparklingworlds.full">WeaponsCachePodCrashSW</li>	<!-- weapons cache pod crash -->
+						<!-- Vanilla Events Expanded -->
+						<li MayRequire="vanillaexpanded.vee">VEE_CropSprout</li>	<!-- crop sprout -->
+						<li MayRequire="vanillaexpanded.vee">VEE_AnimalPodCrash</li>	<!-- animal pod crash -->
+						<li MayRequire="vanillaexpanded.vee">VEE_Cargopodsweapons</li>	<!-- cargo pods (weapon) -->
+						<li MayRequire="vanillaexpanded.vee">VEE_Cargopodsapparel</li>	<!-- cargo pods (apparel) -->
+						<li MayRequire="vanillaexpanded.vee">VEE_CaravanAnimalsWanderIn</li>	<!-- caravan animals wander in -->
+						<li MayRequire="vanillaexpanded.vee">VEE_BattleAnimalsWanderIn</li>	<!-- battle animals wander in -->
+						<li MayRequire="vanillaexpanded.vee">VEE_PsychicStimulation</li>	<!-- psychic stimulation -->
+						<li MayRequire="vanillaexpanded.vee">VEE_PsychicOverdrive</li>	<!-- psychic overdrive -->
+						<!-- Vanilla Ideology Expanded - Memes and Structures -->
+						<li MayRequire="vanillaexpanded.vmemese">VME_JunkChunkDrop</li>	<!-- junk chunk drop -->
+						<!-- Vanilla Psycasts Expanded -->
+						<li MayRequire="vanillaexpanded.vpsycastse">VPE_EltexMeteorite</li>	<!-- eltex meteorite -->
+						<!-- Vanilla Races Expanded - Phytokin -->
+						<li MayRequire="vanillaracesexpanded.phytokin">VRE_GiveQuest_Intro_Phytokin</li>	<!-- wandering phytokin -->
+						<!-- Vanilla Social Interactions Expanded -->
+						<li MayRequire="vanillaexpanded.vanillasocialinteractionsexpanded">VSIE_OneNightStand</li>	<!-- One night stand -->
+						<!-- [AV] Toxic Waste Disposer -->
+						<li MayRequire="veltaris.wastecollector">AV_WasteDisposalOpporunity</li>	<!-- Toxic waste disposal opportunity -->
+						<!-- Biomes! Polluted Lands -->
+						<li MayRequire="biomesteam.biomespollutedlands">BMT_HagbloomSprout</li>	<!-- hagbloom sprout -->
+						<!-- Gulden Biome (Continued) -->
+						<li MayRequire="pphhyy.guldennew">EldenRim_GuldenAmbrosiaSprout</li>	<!-- Gulden ambrosia sprout -->
+						<!-- Biomes! Caverns -->
+						<li MayRequire="biomesteam.biomescaverns">BMT_AmbrosyxSprout</li>	<!-- ambrosyx sprout -->
+						<li MayRequire="biomesteam.biomescaverns">BMT_Incident_PhosphoricLights</li>	<!-- phosphoric lights -->
+						<!-- Hospitality (Continued) -->
+						<li MayRequire="orion.hospitality">HappyGuestJoins</li>	<!-- happy guest joins -->
+						<!-- MSS Tweaks and Fun -->
+						<li MayRequire="mss.flavourpack">MSSFP_WandererJoin_Template</li>	<!-- a familiar face arrives -->
+						<!-- Alpha Animals -->
+						<li MayRequire="sarg.alphaanimals">AA_ResourcePodCrash</li>	<!-- alpha animal resource pod crash -->
+						</whiteList>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
