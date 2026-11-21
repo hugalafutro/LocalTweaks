@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Personal tweak: every milk in the cheese press comes in both sizes. FSF Tweaks' Bulk Processing setting turns
+	     VCE's milk and insect jelly processes into 750 -> 375 and leaves Alpha Animals' night, gow and blue milk at
+	     40 -> 25. Add the missing size of each: VCE's own 50 -> 25 for milk and insect jelly, and a 15x bulk
+	     (600 -> 375, FSF's factor) for the three Alpha Animals milks. Same aging times and quality steps as VCE's.
+	     With Bulk Processing switched off, milk and jelly show the 50 -> 25 process twice. -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Cooking Expanded</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+						<PipeSystem.ProcessDef Name="LT_CheeseProcessBase" Abstract="True">
+							<spawnOnInteractionCell>true</spawnOnInteractionCell>
+							<useIngredients>true</useIngredients>
+							<ticksQuality>
+								<li>600000</li>
+								<li>900000</li>
+								<li>1500000</li>
+								<li>2100000</li>
+								<li>2400000</li>
+								<li>2700000</li>
+								<li>4500000</li>
+							</ticksQuality>
+							<stopAtQuality>true</stopAtQuality>
+							<allowExtractAtCurrentQuality>true</allowExtractAtCurrentQuality>
+							<autoExtract>false</autoExtract>
+						</PipeSystem.ProcessDef>
+						<PipeSystem.ProcessDef ParentName="LT_CheeseProcessBase">
+							<defName>LT_MilkIntoCheeseSmall</defName>
+							<label>Milk into cheese</label>
+							<description>Turns 50 milk into 25 cheese.</description>
+							<labelOverride>Turn 50 milk into 25 cheese.</labelOverride>
+							<priorityInBillList>0</priorityInBillList>
+							<ingredients>
+								<li><thing>Milk</thing><countNeeded>50</countNeeded></li>
+							</ingredients>
+							<results>
+								<li><thing>VCE_Cheese</thing><count>25</count></li>
+							</results>
+						</PipeSystem.ProcessDef>
+						<PipeSystem.ProcessDef ParentName="LT_CheeseProcessBase">
+							<defName>LT_JellyIntoCheeseSmall</defName>
+							<label>Insect jelly into cheese</label>
+							<description>Turns 50 insect jelly into 25 cheese.</description>
+							<labelOverride>Turn 50 insect jelly into 25 cheese.</labelOverride>
+							<priorityInBillList>1</priorityInBillList>
+							<ingredients>
+								<li><thing>InsectJelly</thing><countNeeded>50</countNeeded></li>
+							</ingredients>
+							<results>
+								<li><thing>VCE_Cheese</thing><count>25</count></li>
+							</results>
+						</PipeSystem.ProcessDef>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VCE_CheesePress"]/comps/li[@Class="PipeSystem.CompProperties_AdvancedResourceProcessor"]/processes</xpath>
+					<value>
+						<li>LT_MilkIntoCheeseSmall</li>
+						<li>LT_JellyIntoCheeseSmall</li>
+					</value>
+				</li>
+				<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Alpha Animals</li>
+					</mods>
+					<match Class="PatchOperationSequence">
+						<operations>
+							<li Class="PatchOperationAdd">
+								<xpath>Defs</xpath>
+								<value>
+									<PipeSystem.ProcessDef ParentName="LT_CheeseProcessBase">
+										<defName>LT_NightMilkIntoCheeseBulk</defName>
+										<label>Night Milk into cheese</label>
+										<description>Turns 600 night milk into 375 cheese.</description>
+										<labelOverride>Turn 600 night milk into 375 cheese.</labelOverride>
+										<priorityInBillList>2</priorityInBillList>
+										<ingredients>
+											<li><thing>AA_NightMilk</thing><countNeeded>600</countNeeded></li>
+										</ingredients>
+										<results>
+											<li><thing>VCE_Cheese</thing><count>375</count></li>
+										</results>
+									</PipeSystem.ProcessDef>
+									<PipeSystem.ProcessDef ParentName="LT_CheeseProcessBase">
+										<defName>LT_GowMilkIntoCheeseBulk</defName>
+										<label>Gow Milk into cheese</label>
+										<description>Turns 600 gow milk into 375 cheese.</description>
+										<labelOverride>Turn 600 gow milk into 375 cheese.</labelOverride>
+										<priorityInBillList>3</priorityInBillList>
+										<ingredients>
+											<li><thing>AA_GowMilk</thing><countNeeded>600</countNeeded></li>
+										</ingredients>
+										<results>
+											<li><thing>VCE_Cheese</thing><count>375</count></li>
+										</results>
+									</PipeSystem.ProcessDef>
+									<PipeSystem.ProcessDef ParentName="LT_CheeseProcessBase">
+										<defName>LT_BlueMilkIntoCheeseBulk</defName>
+										<label>Blue Milk into cheese</label>
+										<description>Turns 600 blue milk into 375 cheese.</description>
+										<labelOverride>Turn 600 blue milk into 375 cheese.</labelOverride>
+										<priorityInBillList>4</priorityInBillList>
+										<ingredients>
+											<li><thing>AA_BlueMilk</thing><countNeeded>600</countNeeded></li>
+										</ingredients>
+										<results>
+											<li><thing>VCE_Cheese</thing><count>375</count></li>
+										</results>
+									</PipeSystem.ProcessDef>
+								</value>
+							</li>
+							<li Class="PatchOperationAdd">
+								<xpath>Defs/ThingDef[defName="VCE_CheesePress"]/comps/li[@Class="PipeSystem.CompProperties_AdvancedResourceProcessor"]/processes</xpath>
+								<value>
+									<li>LT_NightMilkIntoCheeseBulk</li>
+									<li>LT_GowMilkIntoCheeseBulk</li>
+									<li>LT_BlueMilkIntoCheeseBulk</li>
+								</value>
+							</li>
+						</operations>
+					</match>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+</Patch>
