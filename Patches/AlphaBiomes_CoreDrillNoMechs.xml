@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- The core sample drill's work giver lacks the canBeDoneByMechs=false that vanilla's deep drill work giver
+	     (Drill) has, so mining mechs (Tunnelers) take the job. Its work tick then calls actor.skills.Learn on a pawn
+	     without skills: one tick of work, "Exception in JobDriver fixed tick ... JobDriver_OperateCoreSampleDrill",
+	     and the mech walks off again. Mechs skip it, as they skip the deep drill. -->
+	<Operation Class="PatchOperationAdd" MayRequire="sarg.alphabiomes">
+		<xpath>Defs/WorkGiverDef[defName="AB_CoreDrill"]</xpath>
+		<value>
+			<canBeDoneByMechs>false</canBeDoneByMechs>
+		</value>
+	</Operation>
+</Patch>
