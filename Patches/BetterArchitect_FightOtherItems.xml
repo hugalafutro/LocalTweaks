@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Better Architect Menu splits the vanilla Security category ("Fight") into tabs. These buildings stayed in
+	     vanilla Security and showed up under "Fight / Other". Each goes to the tab that matches what it does. Every
+	     operation matches only while the def still sits in Security (success=Always keeps a missing mod or a fixed
+	     def silent), so each line retires itself if either side sorts it out. -->
+
+	<!-- Barbs And Moats: Better Architect has a patch for it, but it replaces designationCategory on RazorWire,
+	     RazorWireGate and TrenchWalls, which inherit the category from abstract parents and have no node of their
+	     own, so it changes nothing (and it never listed the security fence and its gate). The two parents carry
+	     the category for all five buildings: razor wire, security fence, trench walls and the two gates. -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[@Name="BaseDefensiveStructure"]/designationCategory[.="Security"]</xpath>
+		<value><designationCategory>Ferny_Barricades</designationCategory></value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[@Name="BaseDefensiveGate"]/designationCategory[.="Security"]</xpath>
+		<value><designationCategory>Ferny_Barricades</designationCategory></value>
+	</Operation>
+	<!-- Fortifications - Industrial (VFE Security part): the fortified trench and platform are cover to fight from -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="FT_Trench" or defName="FT_Platform"]/designationCategory[.="Security"]</xpath>
+		<value><designationCategory>Ferny_Barricades</designationCategory></value>
+	</Operation>
+	<!-- MSS Flavour Pack: the banana peel trips whoever steps on it -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="MSSFP_BananaPeel"]/designationCategory[.="Security"]</xpath>
+		<value><designationCategory>Ferny_Traps</designationCategory></value>
+	</Operation>
+	<!-- MSS Flavour Pack: the firefoam mortar is artillery, with the other mortars -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="MSSFP_Turret_Mortar_Firefoam"]/designationCategory[.="Security"]</xpath>
+		<value><designationCategory>Ferny_Weapons</designationCategory></value>
+	</Operation>
+</Patch>

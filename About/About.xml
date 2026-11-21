@@ -69,5 +69,6 @@
 - Turrets For All + Better Architect Menu: its turrets and artillery sit under Fight / Weapons with the vanilla turrets, not under Other.
 - VFE Factory + Better Architect Menu: the neutroamine synthesizer stays under Automate / Factory.
 - Better Architect Menu: seven buildings from Sparkling Worlds, [AV] Mechtech, More Phytokin Xenotypes and MSS Flavour Pack move from Make / Other to the tab that fits (Refine, Produce, Mechanoids, Farm, Research, Feed).
+- Better Architect Menu: nine buildings from Barbs And Moats, Fortifications - Industrial and MSS Flavour Pack move from Fight / Other to Barricades, Traps and Weapons.
 - VFE Factory + [AV] Mechtech (personal tweak): the neutroamine synthesizer can also run on neurofoam instead of raw meat (second process in its list).</description>
 </ModMetaData>
