@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 	<!-- Better Architect Menu splits the vanilla Production category ("Make") into tabs and moves buildings into
-	     them with one patch folder per mod. These four mods have no folder, so their buildings stayed in vanilla
+	     them with one patch folder per mod. These five mods have no folder, so their buildings stayed in vanilla
 	     Production and showed up under "Make / Other". Each goes to the tab that matches what it does. Every
 	     operation matches only while the def still sits in Production (success=Always keeps a missing mod or a
 	     fixed def silent), so each line retires itself if either side sorts it out. -->
@@ -48,5 +48,12 @@
 		<success>Always</success>
 		<xpath>Defs/ThingDef[defName="MSSFP_Vending_Machine"]/designationCategory[.="Production"]</xpath>
 		<value><designationCategory>Ferny_Kitchen</designationCategory></value>
+	</Operation>
+	<!-- Rimsenal - Plants Pack: the oxykelp vat makes oxygen for the ship, so it sits in "Space / Vacuum", the tab
+	     where Better Architect puts the Vanilla Gravship Expanded oxygen pumps, tanks and harvester -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="Rimsenal_OxyKelpVat"]/designationCategory[.="Production"]</xpath>
+		<value><designationCategory>Ferny_SpaceVacuum</designationCategory></value>
 	</Operation>
 </Patch>
