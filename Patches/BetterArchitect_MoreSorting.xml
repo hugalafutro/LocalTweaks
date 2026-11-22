@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Better Architect Menu: buildings that showed under an "Other" or catch-all tab go to the tab that matches what
+	     they do. A def with its own designationCategory is replaced only while it still holds the old value; a def
+	     that inherits its category from a parent gets its own node, added only while it has none. success=Always
+	     keeps a missing mod silent, so each operation retires itself if either side sorts the def out. -->
+
+	<!-- MSS Tweaks and Fun: Build / Other. The cracked wall is a wall; the tunnel entrance reaches other maps -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="MSS_CrackedWall"]/designationCategory[.="Structure"]</xpath>
+		<value><designationCategory>Ferny_Walls</designationCategory></value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="MSSFP_TunnelEntrance"]/designationCategory[.="Structure"]</xpath>
+		<value><designationCategory>Ferny_Outreach</designationCategory></value>
+	</Operation>
+
+	<!-- [AV] Mechtech: Environment / Other. The neutro freezer and neutro cooler cool things -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="AV_NeutroamineFreezer" or defName="AV_CoolingCell"]/designationCategory[.="Temperature"]</xpath>
+		<value><designationCategory>Ferny_Cooling</designationCategory></value>
+	</Operation>
+
+	<!-- Sparkling Worlds: Furnish / Other. The glitterworld hospital bed (category inherited) goes with the medical beds -->
+	<Operation Class="PatchOperationAdd" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="GlitterworldHospitalBedSW" and not(designationCategory)]</xpath>
+		<value><designationCategory>Ferny_Medical</designationCategory></value>
+	</Operation>
+
+	<!-- Shelf Stack Logistics: Furnish / Other (pick-up point shelf, inherited) and World / Miscellaneous (storage
+	     designation) go to the new Store / Logistics tab (Defs/BetterArchitect_LogisticsStorage.xml) -->
+	<Operation Class="PatchOperationAdd" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="SL_LogisticOutput" and not(designationCategory)]</xpath>
+		<value><designationCategory>LocalTweaks_LogisticsStorage</designationCategory></value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="SL_LogisticDepot"]/designationCategory[.="Misc"]</xpath>
+		<value><designationCategory>LocalTweaks_LogisticsStorage</designationCategory></value>
+	</Operation>
+
+	<!-- Adaptive storage (category inherited from Adaptive Storage Framework's base): VFE Pack's minibar holds drinks
+	     and food, [sbz] Neat Storage's corpse dump spot is plain dumping -->
+	<Operation Class="PatchOperationAdd" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="FFE_Minibar" and not(designationCategory)]</xpath>
+		<value><designationCategory>Ferny_FoodStorage</designationCategory></value>
+	</Operation>
+	<Operation Class="PatchOperationAdd" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="sbz_CorpseSpot" and not(designationCategory)]</xpath>
+		<value><designationCategory>Ferny_GeneralStorage</designationCategory></value>
+	</Operation>
+
+	<!-- World / Miscellaneous (vanilla Misc) -->
+	<!-- Sparkling Worlds: the mind altering device rewrites traits, the computing system speeds research -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="MindAlteringDeviceSW"]/designationCategory[.="Misc"]</xpath>
+		<value><designationCategory>Ferny_Enhancement</designationCategory></value>
+	</Operation>
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="ComputingSystemSW"]/designationCategory[.="Misc"]</xpath>
+		<value><designationCategory>Ferny_ResearchProduction</designationCategory></value>
+	</Operation>
+	<!-- MSS Tweaks and Fun: the peeler -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="MSSFP_HumanProcessor"]/designationCategory[.="Misc"]</xpath>
+		<value><designationCategory>Ferny_Control</designationCategory></value>
+	</Operation>
+	<!-- Alpha Memes: the mesoamerican pyramid -->
+	<Operation Class="PatchOperationReplace" MayRequire="ferny.BetterArchitect">
+		<success>Always</success>
+		<xpath>Defs/ThingDef[defName="AM_MesoamericanPyramid"]/designationCategory[.="Misc"]</xpath>
+		<value><designationCategory>Ferny_Memorial</designationCategory></value>
+	</Operation>
+</Patch>

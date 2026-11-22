@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- Better Architect Menu: a "Logistics" tab under Store for Shelf Stack Logistics' pick-up point shelf and storage
+	     designation (Patches/BetterArchitect_MoreSorting.xml). Only loads with Better Architect Menu. -->
+	<DesignationCategoryDef MayRequire="ferny.BetterArchitect">
+		<defName>LocalTweaks_LogisticsStorage</defName>
+		<label>Logistics</label>
+		<description>Build logistics storage.</description>
+		<order>6</order>
+		<specialDesignatorClasses>
+			<li>Designator_Cancel</li>
+			<li>Designator_Deconstruct</li>
+		</specialDesignatorClasses>
+		<modExtensions>
+			<li Class="BetterArchitect.NestedCategoryExtension">
+				<parentCategory>Ferny_Storage</parentCategory>
+			</li>
+		</modExtensions>
+	</DesignationCategoryDef>
+</Defs>
