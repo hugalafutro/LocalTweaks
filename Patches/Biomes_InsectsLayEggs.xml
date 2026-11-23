@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Egg-laying insects that inherit vanilla BaseInsect's think tree never lay. BaseInsect sets thinkTreeMain Insect,
+	     which has JobGiver_Mate but no JobGiver_LayEgg (only the Animal tree has it), so a female with an egg layer
+	     sits at "egg progress 100%, fertilized" forever. Seen with Biomes! Caverns fungal weevils (2026-11) and fleece
+	     spiders (2026-11-23); Biomes! Caverns and Oasis have 13 such insects (cave spider, crystal mantis, fleece
+	     spider, foundry beetle, frostweaver, fungal mantis, fungal weevil, megapleura, shatterjaw beetle, smoldersting
+	     scorpion, gem scorpion, scarab, tarimtula). Every ThingDef whose parent is BaseInsect, that has an egg layer
+	     and sets no think tree of its own, gets the Animal trees (each tree only where it is missing). A def that sets
+	     its own tree is left alone, so this retires itself per animal if its mod fixes it.
+	     Replaces BiomesCaverns_FungalWeevilLaysEggs.xml. -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[@ParentName="BaseInsect"][comps/li[@Class="CompProperties_EggLayer"]]/race[not(thinkTreeMain)]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[@ParentName="BaseInsect"][comps/li[@Class="CompProperties_EggLayer"]]/race[not(thinkTreeMain)]</xpath>
+			<value>
+				<thinkTreeMain>Animal</thinkTreeMain>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[@ParentName="BaseInsect"][comps/li[@Class="CompProperties_EggLayer"]]/race[thinkTreeMain="Animal"][not(thinkTreeConstant)]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[@ParentName="BaseInsect"][comps/li[@Class="CompProperties_EggLayer"]]/race[thinkTreeMain="Animal"][not(thinkTreeConstant)]</xpath>
+			<value>
+				<thinkTreeConstant>AnimalConstant</thinkTreeConstant>
+			</value>
+		</match>
+	</Operation>
+</Patch>
