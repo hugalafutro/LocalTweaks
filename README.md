@@ -7,7 +7,7 @@ conditionals that retire themselves once that mod is fixed.
 
 | File | Mod | Change |
 |---|---|---|
-| `Patches/VeinMining_ChocolateJadeite.xml` | Alpha Biomes + Vanilla Landmarks Expanded | Chocolate and jadeite rock can be designated with "Mine vein" |
+| `Patches/VeinMining.xml` | Alpha Biomes + Vanilla Landmarks Expanded + Vanilla Gravship Expanded | Chocolate rock, jadeite and compressed vacstone can be designated with "Mine vein" |
 | `Patches/AlphaBiomes_CoreDrillNoMechs.xml` | Alpha Biomes | Mechs no longer take the core sample drill job (`canBeDoneByMechs` false on `AB_CoreDrill`, as on vanilla's deep drill): Tunnelers walked to it, worked one tick, threw "Exception in JobDriver fixed tick ... JobDriver_OperateCoreSampleDrill" (the job gives Mining experience to a pawn without skills) and left |
 | `Patches/AlphaGenes_WretchBlacklist_CherryPicked.xml` | Alpha Genes + Cherry Picker | Removes the cherry-picked `AG_DecreasedCommandRange` gene from the random-mutation blacklist (load error "Could not load reference ... AG_DecreasedCommandRange") |
 | `Patches/BetterGPS_BiomesCavernsRoof.xml` | Better ground-penetrating scanner + Biomes! Caverns | The "allow under a roof" setting can actually place the scanner: Biomes swaps the roof check for its own class, which the setting never removes (unticking it only restores the vanilla check until the next restart) |

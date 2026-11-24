@@ -14,4 +14,20 @@
 			<veinMineable>true</veinMineable>
 		</value>
 	</Operation>
+	<!-- Vanilla Gravship Expanded's compressed vacstone (asteroid rock) has no veinMineable at all (false). -->
+	<Operation Class="PatchOperationConditional" MayRequire="vanillaexpanded.gravship">
+		<xpath>Defs/ThingDef[defName="VGE_Compressed_Vacstone"]/building/veinMineable</xpath>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="VGE_Compressed_Vacstone"]/building/veinMineable</xpath>
+			<value>
+				<veinMineable>true</veinMineable>
+			</value>
+		</match>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="VGE_Compressed_Vacstone"]/building</xpath>
+			<value>
+				<veinMineable>true</veinMineable>
+			</value>
+		</nomatch>
+	</Operation>
 </Patch>
