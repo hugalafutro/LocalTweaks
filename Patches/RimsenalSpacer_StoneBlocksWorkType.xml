@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Rimsenal Faction Pack - Spacer's "make any stone blocks" at the survival station sets
+	     requiredGiverWorkType Crafting (vanilla's Make_StoneBlocksAny has none). [FSF] Complex Jobs moves
+	     DoBillsStonecut, the work giver Rimsenal adds the station to, into its FSFStoneCut work type, and
+	     WorkGiver_DoBill skips any bill whose required work type differs from the giver's: the bill was never done.
+	     Drop the lock so the stonecutting giver takes it. Retires itself once the node is gone. -->
+	<Operation Class="PatchOperationConditional" MayRequire="Rimsenal.Spacer,FrozenSnowFox.ComplexJobs">
+		<xpath>Defs/RecipeDef[defName="Make_StoneBlocksAnyRS"]/requiredGiverWorkType</xpath>
+		<match Class="PatchOperationRemove">
+			<xpath>Defs/RecipeDef[defName="Make_StoneBlocksAnyRS"]/requiredGiverWorkType</xpath>
+		</match>
+	</Operation>
+</Patch>
