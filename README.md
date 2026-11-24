@@ -7,6 +7,7 @@ conditionals that retire themselves once that mod is fixed.
 
 | File | Mod | Change |
 |---|---|---|
+| `Patches/ReBuild_SmoothGravshipHullLabel.xml` | ReBuild: Doors and Corners | Personal tweak: its `RB_SmoothGravshipHull` is renamed "smooth gravship hull". It had the same name as the vanilla gravship hull in the Odyssey tab but is a different wall (340 HP instead of 420, 4 metal instead of 7) |
 | `Patches/VeinMining.xml` | Alpha Biomes + Vanilla Landmarks Expanded + Vanilla Gravship Expanded | Chocolate rock, jadeite and compressed vacstone can be designated with "Mine vein" |
 | `Patches/RimsenalSpacer_StoneBlocksWorkType.xml` | Rimsenal Faction Pack - Spacer + [FSF] Complex Jobs | The survival station's "make any stone blocks" bill is done again: its recipe demanded a Crafting work giver, but Complex Jobs moved stonecutting to its own work type (Stonecutting), so no pawn ever took it |
 | `Patches/AlphaBiomes_CoreDrillNoMechs.xml` | Alpha Biomes | Mechs no longer take the core sample drill job (`canBeDoneByMechs` false on `AB_CoreDrill`, as on vanilla's deep drill): Tunnelers walked to it, worked one tick, threw "Exception in JobDriver fixed tick ... JobDriver_OperateCoreSampleDrill" (the job gives Mining experience to a pawn without skills) and left |

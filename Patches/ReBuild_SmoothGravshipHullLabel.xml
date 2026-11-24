@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- ReBuild: Doors and Corners (Odyssey load folder) adds RB_SmoothGravshipHull with the same label as
+	     vanilla's GravshipHull ("gravship hull"), so the Odyssey architect tab shows two identical names.
+	     It is a different wall: 340 HP instead of 420, 4 metal instead of 7, Standard Gravtech research. -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="RB_SmoothGravshipHull"]/label</xpath>
+		<value>
+			<label>smooth gravship hull</label>
+		</value>
+		<success>Always</success>
+	</Operation>
+</Patch>
