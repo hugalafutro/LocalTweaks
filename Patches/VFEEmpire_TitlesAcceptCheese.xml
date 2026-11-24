@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Vanilla Cooking Expanded adds its cheese (VCE_Cheese) to the food every Empire title accepts: Acolyte to Count
+	     by name, and the higher titles through the abstract BaseEmpireTitleNPC. Vanilla Factions Expanded - Empire
+	     turns Duke and Consul into abstract bases under BaseEmpireTitle and defines its own high titles (Archcount,
+	     Marquess, Duke, Archduke, Consul, Magister, Despot, Stellarch, High Stellarch, ...) with their own food lists,
+	     so none of them inherit the cheese. A conceited dominus guest bought legendary cheese and would not eat it.
+	     Give cheese back to every title whose food list already takes milk. -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RoyalTitleDef/foodRequirement/allowedDefs[li="Milk"][not(li="VCE_Cheese")]</xpath>
+		<value>
+			<li MayRequire="VanillaExpanded.VCookE">VCE_Cheese</li>
+		</value>
+		<success>Always</success>
+	</Operation>
+</Patch>
