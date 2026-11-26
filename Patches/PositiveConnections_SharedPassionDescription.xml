@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Positive Connections (cem.PositiveConnections) wraps the "shared passion" thought description in its def
+	     source, so the line break and the indentation before "do." are part of the text and the tooltip ends with
+	     a lone "do." line. Its English DefInjected file has the one-line text, but under the key
+	     DIL_SharedPassionActivity.description, which matches nothing (the description sits on stage 0), so it is
+	     never used. The xpath only matches while the text still holds the extra whitespace, so the patch retires
+	     itself once the mod fixes the def. -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThoughtDef[defName="DIL_SharedPassionActivity"]/stages/li/description[normalize-space(.) != .]</xpath>
+		<value>
+			<description>I recently spent some time enjoying my passion with someone who appreciates it as much as I do.</description>
+		</value>
+		<success>Always</success>
+	</Operation>
+</Patch>

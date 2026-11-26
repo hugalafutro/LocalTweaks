@@ -66,6 +66,7 @@
 - Fortifications - Industrial + VFE Security: multi-barrel mortar launcher, field howitzer and field cannon keep their gizmo bar (Uninstall included) once player-owned; removes the world artillery comp that null-refs on them.
 - Better ground-penetrating scanner + Biomes! Caverns: the scanner can be placed under a roof; removes the Biomes roof check that the setting cannot.
 - Positive Connections: social log lines in third person with both names instead of first person.
+- Positive Connections: "shared passion" thought description on one line (no stray "do." line).
 - Battery Charge Display: removes the leftover static sun shadow from the three batteries it restyles (config error on load).
 - Turrets For All + Better Architect Menu: its turrets and artillery sit under Fight / Weapons with the vanilla turrets, not under Other.
 - VFE Factory + Better Architect Menu: the neutroamine synthesizer stays under Automate / Factory.
