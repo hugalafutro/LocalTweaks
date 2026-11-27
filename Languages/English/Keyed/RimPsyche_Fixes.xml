@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  RimPsyche - Personality Core: "Loading this psyche unto a pawn" reads "onto". Keyed entries from a later mod
+  replace earlier ones (LoadedLanguage.LoadFromFile_Keyed uses SetOrAdd). Drop this file when the mod fixes it.
+-->
+<LanguageData>
+  <ConfirmLoadFromSlot_RandomOrientation>Loading the Psyche will overwrite the current Psyche of this pawn.\n\nWARNING: The psyche you are trying to load has an undefined sexual orientation. Loading this psyche onto a pawn will randomize their sexuality.\n\nAre you sure you want to overwrite?</ConfirmLoadFromSlot_RandomOrientation>
+</LanguageData>

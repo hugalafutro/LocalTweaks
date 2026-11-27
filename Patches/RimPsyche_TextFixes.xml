@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- RimPsyche - Personality Core (Maux36.Rimpsyche): typos and broken English in its social log lines,
+	     personality descriptions and disposition tooltips ("thanks to how their closely algined views",
+	     "acto n impulse", "individualsfeel", "Disagreements hurts less", ...). Each operation matches the broken
+	     text, so it stops applying once the mod fixes that string. Old log entries re-render with the new wording.
+	     Keyed text (the load-psyche warning) is in Languages/English/Keyed/RimPsyche_Fixes.xml. -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/InteractionDef[defName="Rimpsyche_Conversation"]/logRulesInitiator/rulesStrings/li[.="r_logentry->[INITIATOR_nameDef] brought up {0} with [RECIPIENT_nameDef] in their conversation."]</xpath>
+		<value><li>r_logentry->[INITIATOR_nameDef] brought up {0} in a conversation with [RECIPIENT_nameDef].</li></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/RulePackDef[defName="Sentence_RimpsycheConversationPositiveGreat"]/rulePack/rulesStrings/li[contains(., "closely algined views")]</xpath>
+		<value><li>sent->Their conversation was engaging and pleasant, thanks to their closely aligned views.</li></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Maux36.RimPsyche.PersonalityDef[defName="Rimpsyche_Imagination"]/description[contains(., "while Imaginative individuals")]</xpath>
+		<value><description>Describes how connected a person is to reality versus their imagination. Grounded individuals tend to be practical and focused on tangible matters, while imaginative individuals are prone to daydreaming, creative thinking, and exploring abstract ideas.</description></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Maux36.RimPsyche.PersonalityDef[defName="Rimpsyche_Emotionality"]/description[contains(., "less intensity and remains calm")]</xpath>
+		<value><description>Reflects how a person typically experiences and expresses their emotions. Emotional individuals tend to feel their emotions deeply and react strongly to both positive and negative events. On the other hand, phlegmatic individuals experience emotions with less intensity and remain calm and composed.</description></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Maux36.RimPsyche.PersonalityDef[defName="Rimpsyche_Spontaneity"]/description[contains(., "Those Impulsive individuals")]</xpath>
+		<value><description>Reflects how unpredictable or steady a person tends to be. Impulsive individuals often act on impulse, leading to unexpected or varied behavior. Low spontaneity indicates a more measured, consistent nature.</description></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Maux36.RimPsyche.PersonalityDef[defName="Rimpsyche_Spontaneity"]/highDescription[contains(., "acto n impulse")]</xpath>
+		<value><highDescription>Impulsive individuals tend to act on impulse, leading to unpredictable or varied behavior.</highDescription></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Maux36.RimPsyche.PersonalityDef[defName="Rimpsyche_Loyalty"]/highDescription[contains(., "devoted to those they support")]</xpath>
+		<value><highDescription>Loyal individuals demonstrate steadfast support and remain devoted to those they are committed to.</highDescription></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Maux36.RimPsyche.PersonalityDef[defName="Rimpsyche_Expectation"]/highDescription[contains(., "individualsfeel")]</xpath>
+		<value><highDescription>Demanding individuals feel they deserve the best and are quick to notice when their needs aren't met.</highDescription></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Maux36.RimPsyche.PersonalityDef[defName="Rimpsyche_Authenticity"]/lowDescription[contains(., "influenced by them.")]</xpath>
+		<value><lowDescription>Superficial individuals place greater importance on external presentation and are more strongly influenced by it.</lowDescription></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Maux36.RimPsyche.PsycheDescriptorDef[defName="RP_Desc_TalkFactor"]/positiveDescription[contains(., "Stronger conversations outcomes")]</xpath>
+		<value><positiveDescription>Stronger conversation outcomes.</positiveDescription></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Maux36.RimPsyche.PsycheDescriptorDef[defName="RP_Desc_TalkFactor"]/negativeDescription[contains(., "Weaker conversations outcomes")]</xpath>
+		<value><negativeDescription>Weaker conversation outcomes.</negativeDescription></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Maux36.RimPsyche.PsycheDescriptorDef[defName="RP_Desc_ReceptiveBase"]/positiveDescription[contains(., "Disagreements hurts less")]</xpath>
+		<value><positiveDescription>Disagreements hurt less.</positiveDescription></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Maux36.RimPsyche.PsycheDescriptorDef[defName="RP_Desc_ReceptiveBase"]/negativeDescription[contains(., "Disagreements hurts more")]</xpath>
+		<value><negativeDescription>Disagreements hurt more.</negativeDescription></value>
+		<success>Always</success>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/Maux36.RimPsyche.InterestDomainDef[defName="Rimpsyche_InterestDomainGeneral"]/interests/li[name="InterestLife"]/label[.="Daily life"]</xpath>
+		<value><label>Daily Life</label></value>
+		<success>Always</success>
+	</Operation>
+</Patch>
