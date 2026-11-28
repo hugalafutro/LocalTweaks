@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Better Architect Menu ships a Blueprints patch ("Mods and Shit/Blueprints") that nests the Blueprints
+	     architect tab under its Colony group, but its LoadFolders.xml only loads it for the old
+	     defi.blueprints.fork. Same patch here for Blueprints (Continued) (rimhunter.blueprints), which keeps the
+	     defName "Blueprints"; the conditional makes it apply to whichever Blueprints mod defines that category.
+	     The matching loading-screen tip is in Defs/Blueprints_Tips.xml. -->
+	<Operation Class="PatchOperationConditional" MayRequire="ferny.betterarchitect">
+		<xpath>Defs/DesignationCategoryDef[defName="Blueprints"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/DesignationCategoryDef[defName="Blueprints"]</xpath>
+			<value>
+				<modExtensions>
+					<li Class="BetterArchitect.NestedCategoryExtension">
+						<parentCategory>Ferny_Colony</parentCategory>
+					</li>
+				</modExtensions>
+			</value>
+		</match>
+	</Operation>
+</Patch>
